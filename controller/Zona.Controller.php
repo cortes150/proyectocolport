@@ -9,7 +9,7 @@ class ZonaController
     }
 
     public function guardar(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/lideres/zona.php';
         
@@ -27,7 +27,7 @@ class ZonaController
     }
 
     public function Inicio(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/lideres/zona.php';
         require_once 'view/footer.php';
@@ -35,7 +35,7 @@ class ZonaController
     }
 
     public function zonasLIstadas(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/lideres/listaZona.php';
         require_once 'view/footer.php';

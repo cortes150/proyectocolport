@@ -7,7 +7,7 @@ class LibroController
     }
 
     public function Index(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/libro/libro.php';
         require_once 'view/footer.php';
@@ -15,13 +15,13 @@ class LibroController
     }
 
     public function Crear(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/libro/libro-crear.php';
     }
 
     public function Guardar(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/libro/libro.php';
         require_once 'view/footer.php';
@@ -83,7 +83,7 @@ class LibroController
                 }
                     }
             }
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/libro/libro.php';
         $alm = new Libro();

@@ -25,7 +25,7 @@ class ReporteController
                // echo 'nombre: '.$row['lider'].'<br/>';
               //  echo 'zona: '.$row['zona'].'<br/>';
     //}
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/reporte/reportezona.php';
         require_once 'view/footer.php';

@@ -8,7 +8,7 @@ class CompaniaController
     }
 
     public function Guardar(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/compania/compania.php';
         require_once 'view/footer.php';
@@ -25,21 +25,21 @@ class CompaniaController
     }
 
     public function Index(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/compania/compania.php';
         require_once 'view/footer.php';
     }
 
     public function Crear(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/compania/compania-crear.php';
         require_once 'view/footer.php';
     }
 
     public function story(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/compania/companiaListarZonas.php';
         require_once 'view/footer.php';

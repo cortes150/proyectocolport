@@ -7,7 +7,7 @@ class UsuarioController
     }
 
     public function Index(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/usuario/usuario-reg.php';
         require_once 'view/footer.php';
@@ -16,7 +16,7 @@ class UsuarioController
 
     public function Guardar()
     {
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/usuario/usuario-reg.php';
         
@@ -31,7 +31,7 @@ class UsuarioController
     }
 
     public function Sesiones(){
-        require_once 'view/header.php';
+        require_once 'view/headers.php';
         require_once 'view/inicio.php';
         //require_once 'view/bienvenido.php';
         require_once 'view/footer.php';
