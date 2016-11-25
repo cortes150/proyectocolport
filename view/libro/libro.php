@@ -28,8 +28,8 @@
 		<tr>
 			<td><?php echo $r->titulo; ?></td>
 			<td><?php echo $r->resumen; ?></td>
-			<td><?php echo $r->oficial; ?></td>
-			<td><?php echo $r->venta; ?></td>
+			<td><?php echo $r->precioOficial; ?></td>
+			<td><?php echo $r->precioVenta; ?></td>
 			<td>
 			<div class="col-md-4">
 			<img src="<?php echo $r->imagen; ?>" class="img-thumbnail"/>

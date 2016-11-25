@@ -6,8 +6,8 @@ class Libro
 	public $titulo;
 	public $resumen;
 	public $imagen;
-	public $oficial;
-	public $venta;
+	public $precioOficial;
+	public $precioVenta;
 	public $archivo;
 	public $destino;
 
@@ -28,15 +28,15 @@ class Libro
 	try
 		{
 			
-            $sql = "INSERT INTO libro (titulo,resumen,imagen,oficial,venta)
-		        VALUES ( ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO libro (titulo,resumen,imagen,precioOficial,precioVenta,companiaID,cantidad)
+		        VALUES ( ?, ?, ?, ?, ?,?,?)";
 
             $this->pdo->prepare($sql)->execute(array(
             	$datos->titulo,
             	$datos->resumen,
             	$datos->imagen,
-            	$datos->oficial,
-            	$datos->venta));
+            	$datos->precioOficial,
+            	$datos->precioVenta));
 		}
         catch (Exception $e)
 		{
