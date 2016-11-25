@@ -1,0 +1,19 @@
+SELECT * from zona zo, compania cmp, libro lb, grupo gr where cmp.companiaID = ZO.companiaID AND ZO.companiaID='1' and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID 
+SELECT * from zona zo, compania cmp, libro lb where cmp.companiaID = ZO.companiaID AND ZO.companiaID='1' and lb.companiaID=cmp.companiaID AND zo.zonaID='1' 
+
+
+cantidad libros vendidos x zona
+ibro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID AND ZO.companiaID='1' and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID
+
+SELECT sum(vl.cantidad),  sum(lb.cantidad) from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID AND ZO.companiaID='1' and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and vl.fecha='2016-11-24'
+
+///////////x grupos
+SELECT * from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID AND ZO.companiaID='1' and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and gr.grupoID='1'
+ORDER BY `gr`.`grupoID` ASC
+
+
+//// listar gurpos cantidad de libro con fechas
+
+SELECT gr.grupoID, gr.nombre, vl.cantidad from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and vl.fecha BETWEEN '2016-11-24' and '2016-11-24' ORDER BY `gr`.`grupoID` ASC
+
+SELECT gr.grupoID, gr.nombre, vl.cantidad  from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and vl.fecha BETWEEN  '2016-11-24' and '2016-11-24' ORDER BY `gr`.`grupoID` ASC
