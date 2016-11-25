@@ -33,11 +33,11 @@ class UsuarioController
     public function Sesiones(){
         require_once 'view/header.php';
         require_once 'view/inicio.php';
-        require_once 'view/bienvenido.php';
+        //require_once 'view/bienvenido.php';
         require_once 'view/footer.php';
         $sesiones = new Usuario();
         $sesiones->nick = $_REQUEST['nick'];
         $sesiones->clave=$_REQUEST['clave'];
-        $sesiones->usuarioID > 0 ? $this->model->Actualizar($sesiones): $this->model->SesionIniciada($sesiones);
+        $sesiones->usuarioID > 0 ? $this->model->SesionIniciada($sesiones): $this->model->SesionIniciada($sesiones);
     }
 }

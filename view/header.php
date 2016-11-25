@@ -16,5 +16,19 @@
         
 	</head>
     <body>
+<?php /*
+session_start();
 
+
+if (!isset($_SESSION['nick'])) {
+    echo "<script>window.location.assign('http://localhost:8080/colportaje/?c=inicio&a=Index')</script>";
+}
+*/
+?>
     <div class="container">
+    
+    <?php 
+    $us=$_SESSION[];
+        echo "<script>alert('hola ".$us."')</script>";
+        echo "string";
+    ?>
