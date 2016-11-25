@@ -71,6 +71,10 @@ class Zona
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);*/
+			$stm = $this->pdo->prepare("SELECT zo.nombre name, li.nombre as nameli FROM  zona zo, lider li where zo.liderID=li.liderID ORDER BY name ASC");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);
 		}
 		catch(Exception $e)
 		{

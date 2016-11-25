@@ -12,14 +12,14 @@
 		</thead>
 		<tbody>
 		
-		<?php //foreach($this->model->listarAsignados() as $r): ?>
+		<?php foreach($this->model->listarAsignados() as $r): ?>
 			<tr>
-				<td> Nombre del Lider <?php //echo $r->Nombre; ?></td>
-				<td> Nombre de Zona<?php //echo $r->nombre; ?></td>
+				<td><?php echo $r->name; ?></td>
+				<td><?php echo $r->nameli; ?></td>
 				<td><a class="btn btn-warning" href="?c=Compania&a=Crear">Agregar Grupos</a></td>
 				<td><a class="btn btn-info" href="?c=Compania&a=Crear">Ver Grupos</a></td>
 			</tr>
-			<?php // endforeach; ?>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>
