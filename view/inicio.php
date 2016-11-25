@@ -28,10 +28,10 @@
 							<a href="?c=Asistencia&a=index">C-Grupos</a>
 						</li>
 						<li class="dropdown">
-							 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <strong class="caret"></strong></a>
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporte<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">
 								<li >
-									<a href="?c=Reportes&a=index"> </a>
+									<a href="?c=Compania&a=story">User Story12</a>
 								</li>
 								<li >
 									<a href="?c=Reportes&a=indexSemanal"> </a>
