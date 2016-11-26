@@ -11,3 +11,9 @@ Registrar Usuario
 
 </form>
 <!--verifiacar las inserciones de cada vez q se hace un refresh-->
+
+
+<!-- saved from url=(0050)http://getbootstrap.com/examples/navbar-fixed-top/ -->
+
+  
+        

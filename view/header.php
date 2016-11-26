@@ -25,10 +25,10 @@ if (!isset($_SESSION['nick'])) {
 }
 */
 ?>
-    <div class="container">
+   <!--  <div class="container">
     
     <?php 
     $us=$_SESSION[];
-        echo "<script>alert('hola ".$us."')</script>";
-        echo "string";
-    ?>
+      //  echo "<script>alert('hola ".$us."')</script>";
+       // echo "string";
+    ?> -->

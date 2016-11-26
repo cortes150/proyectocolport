@@ -52,26 +52,46 @@ class Usuario
 	public function SesionIniciada(Usuario $datos)
 	{
 		//$usuario=$_POST['nick'];
+
+		session_start();
+    	ob_start();
 		$contador = 0;
 		try {
+			//$_SESSION['sesion_exito']=3;
 		$sql= $this->pdo->prepare("select * from usuario where nick='$datos->nick'");
 		$sql->execute();
 
 		$resultado=$sql->fetch(PDO::FETCH_OBJ);
+
 		if ($resultado) {
+
 			if(password_verify($datos->clave, $resultado->clave))
 			{
+			
+				if ($resultado->liderID=!null) {
+				//es lider
+			}if ($resultado->coordinadorID=!null) {
+				//es coordinador array("naranja", "plátano");
+
+				$_SESSION['nick']=$resultado->nick;
+				$_SESSION['usuarioID']=$resultado->usuarioID;
+				$_SESSION['Tipo']="Coordinador";
+				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
+				
+			}if ($resultado->colportorID=!null) {
+				//es colpor
+			}
 				//session_start();
-				$_SESSION['usuario']=$resultado->nick;
-				echo "<script>window.location.assign('http://localhost:8080/colportaje/?c=inicio&a=Bienvenido')</script>";
+				
+				
 			}else{
 				echo "<script>alert('El usuario o contraseña esta incorrecto');</script>";
-				echo "<script>window.location.assign('http://localhost:8080/colportaje/?c=inicio&a=Index')</script>";
+				echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
 			}
 		}
 		else{
 			echo "<script>alert('El usuario o contraseña esta incorrecto');</script>";
-			echo "<script>window.location.assign('http://localhost:8080/colportaje/?c=inicio&a=Index')</script>";
+			echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
 		}
 		} catch (Exception $e) {
 			die($e->getMessage());

@@ -1,3 +1,13 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<ul class="nav navbar-nav navbar-right">
+				<div class="navbar-header">
+			<a class="btn btn-primary btn-large" href="?c=inicio&a=Login">Login</a>
+					
+				</div>
+				</ul>
+				
+				
+			</nav>
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -66,3 +76,4 @@
 		</div>
 	</div>
 </div>
+
