@@ -13,24 +13,16 @@
 <form action="?c=compania&a=Guardar" method="POST">
 	<div class="form-group">
 		<label for="">Nombre de Campaña:</label>
-		<input name="nombreCompania" type="text" class="form-control">
+		<input name="nombreCampania" type="text" class="form-control">
 	</div>
-	<div class="form-group">
-		<label for="">Coodinador:</label> 
-		<select class="form-control" name="coordinadorID" id=""> NOMBRE COMPLETO
-			<option value="0">---Seleccione Coordinador---</option>
-			<?php foreach($this->model->listarCoodinador() as $r): ?>
-	 		<option value="<?php echo $r->coordinadorID; ?>"><?php echo $r->primer; ?></option>
-			<?php endforeach; ?>
-	 	</select> 
-	</div>
+	
 	<div class="form-group">
 		<label for="">Fecha de Inicio:</label>
-		<input class="form-control" name="inicio" type="date">		
+		<input class="form-control" name="fechaInicio" type="date">		
 	</div>
 	<div class="form-group">
 	<label for="">Fecha Fin:</label>
-	<input class="form-control" name="fin" type="date"> 	
+	<input class="form-control" name="fechaFin" type="date"> 	
 	</div>
 	<div class="form-group">
 	<label for="">Temporada:</label> 
@@ -38,6 +30,14 @@
 		<option value="0">---Seleccione Temporada---</option>
 		<option value="Invierno">Invierno</option>
 		<option value="Verano">Verano</option>
+	</select>
+
+	<label for="">Mision:</label> 
+	<select class="form-control" name="mision" id="">
+		<option value="0">---Seleccione Mision---</option>
+		<option value="Mision Boliviana Central">Mision Boliviana Central</option>
+		<option value="Mision Boliviana Occidental">Mision Boliviana Occidental</option>
+		<option value="Mision Brasil">Mision Brasil</option>
 	</select>
 
 	<input type="hidden" name="estado" value="Activo">

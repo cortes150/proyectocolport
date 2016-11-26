@@ -2,13 +2,14 @@
 class Compania
 {
 	private $pdo;
-	public $misionID;
-	public $nombreCompania;
-	public $coordinadorID;
-	public $inicio;
-	public $fin;
+	//public $misionID;
+	public $nombreCampania;
+	//public $coordinadorID;
+	public $fechaInicio;
+	public $fechaFin;
 	public $temporada;
 	public $estado;
+	public $mision;
 
 	public function __CONSTRUCT()
 	{
@@ -38,18 +39,22 @@ class Compania
 
     public function GuardarCompania(Compania $datos)
 	{
+
 		try
 		{
-            $sql = "INSERT INTO compania (nombreCompania,coordinadorID,inicio,fin,temporada,estado)
-		        VALUES ( ?, ?, ?, ?, ?, ?)";
+			session_start();
+    		ob_start();
+            $sql = "INSERT INTO compania (nombreCampania,fechaInicio,fechaFinal,temporada,estado,mision,usuarioID)
+		        VALUES ( ?, ?, ?, ?, ?,?,?)";
 
             $this->pdo->prepare($sql)->execute(array(
-            	$datos->nombreCompania,
-            	$datos->coordinadorID,
-            	$datos->inicio,
-            	$datos->fin,
+            	$datos->nombreCampania,
+            	$datos->fechaInicio,
+            	$datos->fechaFin,
             	$datos->temporada,
-            	$datos->estado));
+            	$datos->estado,
+            	$datos->mision,
+            	$_SESSION['usuarioID']));
 		}
         catch (Exception $e)
 		{
@@ -60,7 +65,7 @@ class Compania
 	public function listarCompania(){
         try
 		{
-			$stm = $this->pdo->prepare("SELECT * FROM compania ORDER BY nombreCompania ASC");
+			$stm = $this->pdo->prepare("SELECT * FROM compania ORDER BY nombreCampania ASC");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

@@ -36,8 +36,8 @@ class Usuario
 	{
 		try
 		{
-            $sql = "INSERT INTO usuario (nick, clave)
-		        VALUES ( ?, ?)";
+				$sql = "INSERT INTO usuarioo (nick,clave,tipo,miembroID)
+		        VALUES (?,?,null,null)";
 
             $this->pdo->prepare($sql)->execute(array(
             	$datos->nick,
@@ -58,7 +58,7 @@ class Usuario
 		$contador = 0;
 		try {
 			//$_SESSION['sesion_exito']=3;
-		$sql= $this->pdo->prepare("select * from usuario where nick='$datos->nick'");
+		$sql= $this->pdo->prepare("select * from usuarioo where nick='$datos->nick'");
 		$sql->execute();
 
 		$resultado=$sql->fetch(PDO::FETCH_OBJ);
@@ -68,18 +68,31 @@ class Usuario
 			if(password_verify($datos->clave, $resultado->clave))
 			{
 			
-				if ($resultado->liderID=!null) {
+				if ($resultado->tipo=="lider") {
+
+				$_SESSION['nick']=$resultado->nick;
+				$_SESSION['usuarioID']=$resultado->usuarioID;
+				$_SESSION['Tipo']=$resultado->tipo;
+				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				//es lider
-			}if ($resultado->coordinadorID=!null) {
+			}
+
+			if ($resultado->tipo=="coordinador") {
 				//es coordinador array("naranja", "plátano");
 
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
-				$_SESSION['Tipo']="Coordinador";
+				$_SESSION['Tipo']=$resultado->tipo;
 				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				
-			}if ($resultado->colportorID=!null) {
+			}
+
+			if ($resultado->tipo=="colportor") {
 				//es colpor
+				$_SESSION['nick']=$resultado->nick;
+				$_SESSION['usuarioID']=$resultado->usuarioID;
+				$_SESSION['Tipo']=$resultado->tipo;
+				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 			}
 				//session_start();
 				

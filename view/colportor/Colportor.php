@@ -33,7 +33,8 @@
   <tbody>
     <?php foreach($this->model->listarColpoltor() as $r): ?>
     <tr>
-      <td><?php echo $r->nombre; ?></td>
+      <td><?php echo $r->primerNombre; ?></td>
+      <td><?php echo $r->segundoNombre; ?></td>
       <td><?php echo $r->apellido; ?></td>
       <td><?php echo $r->ci; ?></td>
       <td><?php echo $r->nacimiento; ?></td>
@@ -41,6 +42,7 @@
       <td><?php echo $r->ciudad; ?></td>
       <td><?php echo $r->universidad; ?></td>
       <td><?php echo $r->facultad; ?></td>
+      <td><?php echo $r->carrera; ?></td>
       <td>
      
       </td>

@@ -6,6 +6,7 @@ Registrar Usuario
 	<label for="">Contraseña:</label> <br>
 	<input type="password" name="clave">
 	<br>
+	
 	 <br>
 	<input type="submit" value="Registrar">
 

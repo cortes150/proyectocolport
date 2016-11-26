@@ -103,7 +103,7 @@ $sql = "INSERT INTO colportorr (nombre,apellido,ci,nacimiento,pais,ciudad,univer
     public function listarColpoltor(){
         try
 		{
-			$stm = $this->pdo->prepare("SELECT * FROM colportorr ORDER BY nombre ASC");
+			$stm = $this->pdo->prepare("SELECT * FROM miembro ORDER BY primerNombre ASC");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

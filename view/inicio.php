@@ -13,9 +13,6 @@ session_start();
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-					<li class="">
-							<a href="?c=inicio&a=Index">Ingresar</a>
-						</li>
 						<li class="">
 							<a href="?c=usuario&a=index">Usuarios</a>
 						</li>

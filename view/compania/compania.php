@@ -41,7 +41,7 @@
 </script>
 <h1>Lista de Campañas</h1>
 <div class="well well-sm text-right">
-    <a class="btn btn-success" href="?c=Compania&a=Crear">Agregar video</a>
+    <a class="btn btn-success" href="?c=Compania&a=Crear">Agregar Campañas</a>
 </div>
 
 <hr>
@@ -72,12 +72,12 @@
 	<tbody>
 		<?php foreach($this->model->listarCompania() as $r): ?>
 		<tr>
-			<td><?php echo $r->nombreCompania; ?></td>
-			<td><?php echo $r->coordinadorID; ?></td>
-			<td><?php echo $r->fechainicio; ?></td>
-			<td><?php echo $r->fechafinal; ?></td>
+			<td><?php echo $r->nombreCampania; ?></td>
+			<td><?php echo $r->fechaInicio; ?></td>
+			<td><?php echo $r->fechaFinal; ?></td>
 			<td><?php echo $r->temporada; ?></td>
 			<td><?php echo $r->estado; ?></td>
+      <td><?php echo $r->mision; ?></td>
       <td><a class="btn btn-warning" href="?c=Zona&a=Inicio">Agregar Zonas</a></td>
       <td><a class="btn btn-info" href="?c=Zona&a=zonasLIstadas">Ver zonas Agregadas</a></td>
       <td><a class="btn btn-success" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>

@@ -12,15 +12,19 @@ class CompaniaController
         require_once 'view/inicio.php';
         require_once 'view/compania/compania.php';
         require_once 'view/footer.php';
-        $alm = new Compania();
+        $Compania = new Compania();
+
         //$alm->misionID = $_REQUEST['misionID'];
-        $alm->nombreCompania = $_REQUEST['nombreCompania'];
-        $alm->coordinadorID = $_REQUEST['coordinadorID'];
-        $alm->inicio = $_REQUEST['inicio'];
-        $alm->fin = $_REQUEST['fin'];
-        $alm->temporada = $_REQUEST['temporada'];
-        $alm->estado = $_REQUEST['estado'];
-        $alm->misionID > 0 ? $this->model->Actualizar($alm) : $this->model->GuardarCompania($alm);
+        $Compania->nombreCampania = $_REQUEST['nombreCampania'];
+        //$alm->coordinadorID = $_REQUEST['coordinadorID'];
+        $Compania->fechaInicio = $_REQUEST['fechaInicio'];
+        $Compania->fechaFin = $_REQUEST['fechaFin'];
+        $Compania->temporada = $_REQUEST['temporada'];
+        $Compania->estado = $_REQUEST['estado'];
+        $Compania->mision=$_REQUEST['mision'];
+
+        $this->model->GuardarCompania($Compania);
+       // $Compania->misionID > 0 ? $this->model->Actualizar($Compania) : $this->model->GuardarCompania($Compania);
         //header('Location: view/mision/mision.php');
     }
 

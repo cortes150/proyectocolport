@@ -66,36 +66,3 @@
 <?php
 	
 ?>
-<table border="1" width="100%">
-	<thead>
-    	<tr>
-        	<th><center><strong>A</strong></center></th>
-            <th><center><strong>B</strong></center></th>
-            <th><center><strong>C</strong></center></th>
-            <th><center><strong>D</strong></center></th>
-			<th><center><strong>E</strong></center></th>
-			<th><center><strong>F</strong></center></th>
-            <th><center><strong>G</strong></center></th>
-        </tr>
-    	<tr>
-        	<th>ID</th>
-            <th>NOMBRE</th>
-            <th>DIRECCION</th>
-            <th>CORREO</th>
-			<th>TELEFONO</th>
-			<th>OCUPACION</th>
-            <th>ESTADO</th>
-        </tr>
-	</thead>
-    <tbody>
-  	<?php
-		
-	?>
-    </tbody>
-</table>
-</div>
-
-/*
-zonas, xq 
-lideres
-*/
