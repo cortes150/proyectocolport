@@ -8,3 +8,5 @@ class Database
         return $pdo;
     }
 }
+
+//http://192.168.1.38/phpmyadmin/db_structure.php?server=1&db=colport&token=b23d15028fbeecb99150b6043abccfeb
