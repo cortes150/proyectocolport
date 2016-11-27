@@ -78,6 +78,15 @@
 			<td><?php echo $r->temporada; ?></td>
 			<td><?php echo $r->estado; ?></td>
       <td><?php echo $r->mision; ?></td>
+       <td><form action="?c=Libro&a=agregarLibro" method="post" enctype="multipart/form-data" name="form1">
+      
+      <strong>Agregar Archivo de CVS [Libros]</strong>
+      <input type="file" name="archivo" id="archivo">
+      <input type="submit" name="button" class="btn" id="button" value="Agregar Libros">
+      </form>
+     </td>
+     <td><a class="btn btn-success" href="?c=Mision&a=Crear">Asignar Lider</a></td>
+ 
       <td><a class="btn btn-warning" href="?c=Zona&a=Inicio">Agregar Zonas</a></td>
       <td><a class="btn btn-info" href="?c=Zona&a=zonasLIstadas">Ver zonas Agregadas</a></td>
       <td><a class="btn btn-success" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>
