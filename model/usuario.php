@@ -73,7 +73,8 @@ class Usuario
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
-				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
+				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				//es lider
 			}
 
@@ -83,7 +84,8 @@ class Usuario
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
-				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
+				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				
 			}
 
@@ -92,19 +94,22 @@ class Usuario
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
-				echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
+				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 			}
 				//session_start();
 				
 				
 			}else{
 				echo "<script>alert('El usuario o contraseña esta incorrecto');</script>";
-				echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=inicio&a=Login')</script>";
+				//echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
 			}
 		}
 		else{
 			echo "<script>alert('El usuario o contraseña esta incorrecto');</script>";
-			echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
+			echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=inicio&a=Login')</script>";
+			//echo "<script>window.location.assign('http://localhost/Colport/?c=inicio&a=Login')</script>";
 		}
 		} catch (Exception $e) {
 			die($e->getMessage());

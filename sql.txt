@@ -17,3 +17,18 @@ ORDER BY `gr`.`grupoID` ASC
 SELECT gr.grupoID, gr.nombre, vl.cantidad from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and vl.fecha BETWEEN '2016-11-24' and '2016-11-24' ORDER BY `gr`.`grupoID` ASC
 
 SELECT gr.grupoID, gr.nombre, vl.cantidad  from zona zo, compania cmp, libro lb, grupo gr, ventalibro vl where cmp.companiaID = ZO.companiaID and lb.companiaID=cmp.companiaID AND zo.zonaID='1' and gr.zonaID=zo.zonaID and vl.libroID=lb.libroID and vl.fecha BETWEEN  '2016-11-24' and '2016-11-24' ORDER BY `gr`.`grupoID` ASC
+
+
+////////////////////////////////////////////////////////////////////////////
+INSERT INTO `miembro`(`miembroID`, `pirmerNombre`, `segundoNombre`, `apellido`, `ci`, `nacimiento`, `pais`, `ciudad`, `universidad`, `facultad`, `carrera`, `foto`) 
+VALUES
+(NULL, 'Sergio', 'Sanson', 'Sanjines', '13265478', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio1', 'Sanson1', 'Sanjines1', '132654781', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio2', 'Sanson2', 'Sanjines2', '132654782', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio3', 'Sanson3', 'Sanjines3', '132654783', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio4', 'Sanson4', 'Sanjines4', '132654784', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio5', 'Sanson5', 'Sanjines5', '132654785', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio6', 'Sanson6', 'Sanjines6', '132654786', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio7', 'Sanson7', 'Sanjines7', '132654787', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio8', 'Sanson8', 'Sanjines8', '132654788', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
+(NULL, 'Sergio9', 'Sanson9', 'Sanjines9', '132654789', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto');

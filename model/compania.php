@@ -39,7 +39,6 @@ class Compania
 
     public function GuardarCompania(Compania $datos)
 	{
-
 		try
 		{
 			session_start();
