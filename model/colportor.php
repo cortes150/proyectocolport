@@ -1,8 +1,9 @@
  <?php 
 class Colportor
 {
-	//private $model;
-    public $nombre;
+	private $model;
+    public $primerNombre;
+    public $segundoNombre;
     public $apellido;
     public $ci;
     public $nacimiento;
@@ -10,6 +11,7 @@ class Colportor
     public $ciudad;
     public $universidad;
     public $facultad;
+    public $carrera;
 
 	public function __CONSTRUCT()
 	{
@@ -24,74 +26,41 @@ class Colportor
 	}
 
  public function verificarExistente(Colportor $datos){
+		try
+		{
+			$consulta="SELECT * from miembro WHERE ci='$datos->ci'";
+			$result=$this->pdo->query($consulta);
+			//$alm=$this->model->$result;
+			$result->execute();
 
- 	$stm = $this->pdo->prepare("SELECT * FROM `colportorr` WHERE `ci`=$datos->ci");///ordenar alf
-			$bind = $stm->bindValue(':ci', $datos->ci, PDO::PARAM_INT);
-			$stm->execute();
-
-			//$stm = $pdo->prepare('select * from author where id = :id');
-			//$bind = $stm->bindValue(':id', $id, PDO::PARAM_INT);
-// Create the query and asign the result to a variable call $result
-	
-	// Extract the values from $result
-	$rows = $stm->fetchAll();
-
-	return $rows;
-	// Since the values are an associative array we use foreach to extract the values from $rows
-	foreach ($rows as $row) {
-		echo 'id_empleado: '.$row['colportorID'].'<br/>';
-		echo 'nombre: '.$row['nombre'].'<br/>';
-		echo 'email: '.$row['apellido'].'<br/>';
-		echo 'telefono: '.$row['ci'].'<br/>';
-		echo "<hr/>";
+			return $result->fetch(PDO::FETCH_OBJ);
+		}
+		catch (Exception $exception)
+        {
+            die($e->getMessage());
+        }
 	}
-
-//$stm->execute();
-// $authors = $stm->fetchAll(PDO::FETCH_ASSOC);
-// $numero = count($authors[0]);
-// for ($i=0; $i <$numero ; $i++) { 
-// 	# code...
-// 	echo $authors[0] . "<br />\n";
-// }
-
-//sql = "SELECT * FROM `colportorr` WHERE `ci`=$datos->ci";
-
-
-
-    }
     public function guardarColpotor(Colportor $datos){
 
-
-// $sql = "INSERT INTO `colportorr` (`colportorID`, `nombre`, `apellido`, `ci`, `nacimiento`, `pais`, `ciudad`, `universidad`, `facultad`) VALUES (NULL, \'carlos\', \'peralta\', \'2343221\', \'1986-04-23\', \'ecuado\', \'quito\', \'Uab\', \'teologia\')";
-//strtotime("$datos->nacimiento")
-// try {
-
-// $stm = $this->pdo->prepare("INSERT INTO `colportorr` (`colportorID`, `nombre`, `apellido`, `ci`, `nacimiento`, `pais`, `ciudad`, `universidad`, `facultad`) VALUES (NULL, \'$datos->nombre\', \'$datos->apellido\', \'$datos->ci\', \'$datos->nacimiento)\', \'$datos->pais\', \'$datos->ciudad\', \'$datos->universidad\', \'$datos->facultad\')");///ordenar alf
-			
-// 			$stm->execute();	
-// } catch (Exception $e) {
-
-// 	die($e->getMessage());
-// }
-  //   	$sql = "INSERT INTO `colportorr` (`colportorID`, `nombre`, `apellido`, `ci`, `nacimiento`, `pais`, `ciudad`, `universidad`, `facultad`) VALUES (NULL, \'$datos->nombre\', \'$datos->apellido\', \'$datos->ci\', \'strtotime("$datos->nacimiento")\', \'$datos->pais\', \'$datos->ciudad\', \'$datos->universidad\', \'$datos->facultad\')";
-    	
-$sql = "INSERT INTO colportorr (nombre,apellido,ci,nacimiento,pais,ciudad,universidad,facultad)
-		        VALUES ( ?, ?, ?, ?, ?,?,?,?)";
+    	$sql = "INSERT INTO miembro (primerNombre,segundoNombre,apellido,ci,nacimiento,pais,ciudad,universidad,facultad,carrera)
+		        VALUES ( ?, ?, ?, ?, ?,?,?,?,?,?)";
 
     	try
 		{
-			
+
           $date = new DateTime($datos->nacimiento);
 //echo $date->format('Y-m-d');
             $this->pdo->prepare($sql)->execute(array(
-            	$datos->nombre,
+            	$datos->primerNombre,
+            	$datos->segundoNombre,
             	$datos->apellido,
             	$datos->ci,
             	$date->format('Y-m-d'),
             	$datos->pais,
             	$datos->ciudad,
             	$datos->universidad,
-            	$datos->facultad));
+            	$datos->facultad,
+            	$datos->carrera));
 		}
         catch (Exception $e)
 		{
