@@ -21,6 +21,7 @@
   <thead>
   <tr>
     <th>Nombre</th>
+    <th>SecNombre</th>
     <th>Apellido</th>
     <th>Ci</th>
     <th>Nacimiento</th>
@@ -28,6 +29,7 @@
     <th>Ciudad</th>
     <th>Universidad</th>
     <th>Facultad</th>
+    <th>Carrerra</th>
   </tr>
   </thead>
   <tbody>
