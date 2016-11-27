@@ -6,11 +6,6 @@
                     </footer>
                 </div>
             </div>-->
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
 <div class="row">
     <div class="col-xs-12">
 <div class="container">
