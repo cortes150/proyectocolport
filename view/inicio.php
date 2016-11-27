@@ -29,7 +29,7 @@ session_start();
 							<a href="?c=Zona&a=Inicio">Asisgnar Zonas</a>
 						</li>
 						<li>
-							<a href="?c=Asistencia&a=index">C-Grupos</a>
+							<a href="?c=Grupo&a=Index">C-Grupos</a>
 						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporte<strong class="caret"></strong></a>
