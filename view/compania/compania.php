@@ -82,6 +82,7 @@
       
       <strong>Agregar Archivo de CVS [Libros]</strong>
       <input type="file" name="archivo" id="archivo">
+      <input type="hidden" name="companiaID" value="<?php echo $r->companiaID; ?>">
       <input type="submit" name="button" class="btn" id="button" value="Agregar Libros">
       </form>
      </td>
