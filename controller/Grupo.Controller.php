@@ -35,5 +35,20 @@ class GrupoController
         require_once 'view/grupos/grupos-add-colporto.php';
         require_once 'view/footer.php';
     }
-    
+    public function AgregarColportor(){
+    	$miembroID=$_POST["miembroID"];
+    	$grupoID=$_POST["grupoID"];
+        $this->model->GuardarMiembroGrupo($miembroID,$grupoID);
+        require_once 'view/headers.php';
+        require_once 'view/inicio.php';
+        require_once 'view/grupos/grupos.php';
+        require_once 'view/footer.php';   
+    }
+
+    public function ListaGrupo(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio.php';
+        require_once 'view/grupos/grupo-lista.php';
+        require_once 'view/footer.php';
+    }
 }

@@ -19,7 +19,8 @@
     <tr>
       <td><?php echo $r->name; ?></td>
       <td><?php echo $r->namezona; ?></td>
-      <td><a class="btn btn-success" href="?c=Grupo&a=AddColportor">Añadir Colportores</a></td>
+      <td><a class="btn btn-success" href="?c=Grupo&a=AddColportor&idg=<?php echo $r->idg; ?>">Añadir Colportores</a></td>
+      <td><a class="btn btn-info" href="?c=Grupo&a=ListaGrupo&idg=<?php echo $r->idg; ?>">Ver Colportores del Grupo</a></td>
     </tr>
     <?php endforeach; ?>
 	</tbody>
