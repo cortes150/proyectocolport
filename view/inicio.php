@@ -31,6 +31,9 @@ session_start();
 						<li>
 							<a href="?c=Grupo&a=Index">C-Grupos</a>
 						</li>
+						<li>
+							<a href="?c=Grupo&a=Index">Asignar libros Lider</a>
+						</li>
 						<li class="dropdown">
 							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reporte<strong class="caret"></strong></a>
 							<ul class="dropdown-menu">

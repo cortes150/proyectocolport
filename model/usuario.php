@@ -51,8 +51,6 @@ class Usuario
 
 	public function SesionIniciada(Usuario $datos)
 	{
-		//$usuario=$_POST['nick'];
-
 		session_start();
     	ob_start();
 		$contador = 0;
@@ -60,30 +58,27 @@ class Usuario
 			//$_SESSION['sesion_exito']=3;
 		$sql= $this->pdo->prepare("select * from usuarioo where nick='$datos->nick'");
 		$sql->execute();
-
 		$resultado=$sql->fetch(PDO::FETCH_OBJ);
-
 		if ($resultado) {
-
 			if(password_verify($datos->clave, $resultado->clave))
 			{
-			
 				if ($resultado->tipo=="lider") {
-
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
-				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
+				$_SESSION['miembroID']=$resultado->miembroID;
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Zona&a=Index');</script>";
+				echo "string";
 				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				//es lider
 			}
-
 			if ($resultado->tipo=="coordinador") {
 				//es coordinador array("naranja", "plátano");
 
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
+				$_SESSION['miembroID']=$resultado->miembroID;
 				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
 				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 				
@@ -94,6 +89,7 @@ class Usuario
 				$_SESSION['nick']=$resultado->nick;
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
+				$_SESSION['miembroID']=$resultado->miembroID;
 				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=compania&a=index')</script>";
 				//echo "<script>window.location.assign('http://localhost/Colport/?c=compania&a=index')</script>";
 			}

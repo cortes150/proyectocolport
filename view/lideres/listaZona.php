@@ -12,12 +12,10 @@
 		</thead>
 		<tbody>
 		
-		<?php foreach($this->model->listarAsignados() as $r): ?>
+		<?php foreach($this->model->listarAsignadosCampania() as $r): ?>
 			<tr>
-				<td><?php echo $r->name; ?></td>
-				<td><?php echo $r->nameli; ?></td>
-				<td><a class="btn btn-warning" href="?c=Compania&a=Crear">Agregar Grupos</a></td>
-				<td><a class="btn btn-info" href="?c=Compania&a=Crear">Ver Grupos</a></td>
+				<td><?php echo $r->nombre; ?></td>
+				<td><?php //echo $r->nameli; ?></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>

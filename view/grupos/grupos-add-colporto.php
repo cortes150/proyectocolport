@@ -51,6 +51,7 @@
 	    <label>
 	      <input type="checkbox" name="miembroID[]" value="<?php echo $r->miembroID; ?>">
 	    <input type="hidden" name="grupoID" value="<?php echo $_GET['idg'] ?>">
+	    <input type="hidden" name="idz" value="<?php echo $_GET['idz'] ?>">
 	    </label>
 	  </div>
       </td>

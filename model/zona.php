@@ -70,16 +70,12 @@ class Zona
 		}
     }
 
-    public function listarAsignados(){///actualizarce automaticamente
+    public function listarAsignadosCampania(){///actualizarce automaticamente
         try
 		{
+			$id=$_REQUEST['id'];
 
-			/*$stm = $this->pdo->prepare("SELECT colportorID AS id, CONCAT(primer, ' ',segundo, ' ',paterno, ' ',materno) AS Nombre , zonaID as nombre, rol FROM colportor col  WHERE rol='lider' and zonaID is not NULL ORDER BY Nombre ASC");*/
-			/*$stm = $this->pdo->prepare("SELECT CONCAT(primer,' ',segundo,' ',paterno,' ',materno) as Nombre, zo.nombre, col.rol from colportor col, zona zo WHERE rol='lider' AND col.zonaID is not null and col.zonaID=zo.zonaID ORDER by Nombre ASC");
-			$stm->execute();
-
-			return $stm->fetchAll(PDO::FETCH_OBJ);*/
-			$stm = $this->pdo->prepare("SELECT li.liderID id, zo.nombre name, li.nombre as nameli FROM  zona zo, lider li where zo.liderID=li.liderID ORDER BY name ASC");
+			$stm = $this->pdo->prepare("SELECT nombre FROM zona WHERE companiaID='$id'");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -88,6 +84,11 @@ class Zona
 		{
 			die($e->getMessage());
 		}
+			/*$stm = $this->pdo->prepare("SELECT colportorID AS id, CONCAT(primer, ' ',segundo, ' ',paterno, ' ',materno) AS Nombre , zonaID as nombre, rol FROM colportor col  WHERE rol='lider' and zonaID is not NULL ORDER BY Nombre ASC");*/
+			/*$stm = $this->pdo->prepare("SELECT CONCAT(primer,' ',segundo,' ',paterno,' ',materno) as Nombre, zo.nombre, col.rol from colportor col, zona zo WHERE rol='lider' AND col.zonaID is not null and col.zonaID=zo.zonaID ORDER by Nombre ASC");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);*/
     }
 
    public function CrearZonaa($idc, $name){
@@ -100,6 +101,23 @@ class Zona
 				$usu,
 				$idc));
 		echo "<script> alert('Zona Creada...');</script>";
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+    }
+    public function PerfilLider(){
+        try
+		{//SELECT * FROM usuarioo us, zona zo, compania cp, miembro mi WHERE us.usuarioID='3' and cp.companiaID=zo.zonaID and mi.miembroID=us.miembroID
+
+		//SELECT concat(m.primerNombre,' ',m.segundoNombre) as nombres,m.apellido,comp.nombreCampania,z.nombre FROM miembrozona mz,miembro m,zona z,compania comp where mz.miembroID = '16' and mz.miembroID=m.miembroID AND mz.zonaID=z.zonaID and comp.companiaID=z.companiaID
+		//$id=$_SESSION['usuarioID'];
+		$miembroID=$_SESSION['miembroID'];
+		$stm = $this->pdo->prepare("SELECT concat(m.primerNombre,' ',m.segundoNombre) as nombres,z.zonaID as zonaID,m.apellido as apellido,comp.nombreCampania as nombreCampania,z.nombre as nombreZona FROM miembrozona mz,miembro m,zona z,compania comp where mz.miembroID = '$miembroID' and mz.miembroID=m.miembroID AND mz.zonaID=z.zonaID and comp.companiaID=z.companiaID");
+			$stm->execute();
+
+			return $stm->fetch(PDO::FETCH_OBJ);
 		}
 		catch(Exception $e)
 		{

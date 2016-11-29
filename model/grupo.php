@@ -41,14 +41,15 @@ class Grupo
 			die($e->getMessage());
 		}
     }
-	public function GuardarGrupo($nombre){
+	public function GuardarGrupoM($nombre, $idz){
         try {
-        $id=$_SESSION['usuarioID'];
-        $query = $this->pdo->prepare("SELECT zo.zonaID from zona zo, usuarioo us where us.usuarioID='$id' and zo.usuarioID=us.usuarioID");
-        $query->execute();
-        $zonaID= $query->fetch(PDO::FETCH_OBJ);
-        $name=$nombre;
-        $queryy = "INSERT INTO grupo (nombre, zonaID) VALUES ('$nombre', '$zonaID->zonaID')";
+        //$id=$_SESSION['usuarioID'];
+       /* $query = $this->pdo->prepare("SELECT zo.zonaID from zona zo, usuarioo us where us.usuarioID='$id' and zo.usuarioID=us.usuarioID");
+        $query->execute();*/
+        //$zonaID= $query->fetch(PDO::FETCH_OBJ);
+        //$idz=$zonaID;
+        $idUs=$_SESSION['usuarioID'];
+        $queryy = "INSERT INTO grupo (nombre, zonaID, usuarioID) VALUES ('$nombre', '$idz',$idUs)";
         //$query->execute();
         $this->pdo->prepare($queryy)->execute();
          } catch (Exception $e) {
@@ -59,8 +60,11 @@ class Grupo
 	public function ListarGrupo(){
         try
 		{
+			//SELECT * from grupo WHERE usuarioID = '6'
+			//SELECT gr.grupoID as idg, zo.zonaID as zid, gr.nombre name, zo.nombre as namezona from zona zo, usuarioo us, grupo gr where us.usuarioID='$id' and zo.usuarioID=us.usuarioID and gr.zonaID=zo.zonaID"
+			$idz=$_REQUEST['idz'];
 			$id=$_SESSION['usuarioID'];
-			$stm = $this->pdo->prepare("SELECT gr.grupoID as idg, zo.zonaID as zid, gr.nombre name, zo.nombre as namezona from zona zo, usuarioo us, grupo gr where us.usuarioID='$id' and zo.usuarioID=us.usuarioID and gr.zonaID=zo.zonaID");
+			$stm = $this->pdo->prepare("SELECT g.nombre as nombreGrupo,z.nombre as nombreZona,grupoID from grupo g, zona z WHERE g.usuarioID = '$id' and g.zonaID=z.zonaID");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

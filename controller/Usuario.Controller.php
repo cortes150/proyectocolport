@@ -34,17 +34,6 @@ class UsuarioController
         $sesiones = new Usuario();
         $sesiones->nick = $_POST['user'];
         $sesiones->clave = $_POST['pass'];
-
-
-       // $sesiones = new Usuario();
-       // $sesiones->nick = $_REQUEST['nick'];
-       // $sesiones->clave=$_REQUEST['clave'];
         $sesiones->usuarioID > 0 ? $this->model->SesionIniciada($sesiones): $this->model->SesionIniciada($sesiones);
-
-        // require_once 'view/headers.php';
-        // require_once 'view/inicio.php';
-        // //require_once 'view/bienvenido.php';
-        // require_once 'view/footer.php';
-
     }
 }
