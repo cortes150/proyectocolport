@@ -31,13 +31,30 @@ class ZonaController
         require_once 'view/inicio.php';
         require_once 'view/lideres/zona.php';
         require_once 'view/footer.php';
+    }
 
+    public function CrearZona(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio.php';
+        require_once 'view/lideres/zona-crear.php';
+        require_once 'view/footer.php';
     }
 
     public function zonasLIstadas(){
         require_once 'view/headers.php';
         require_once 'view/inicio.php';
         require_once 'view/lideres/listaZona.php';
+        require_once 'view/footer.php';
+    }
+    public function GuardarZona(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio.php';
+        $idc=$_POST['companiaID'];
+        $name=$_POST['nombre'];
+        $this->model->CrearZonaa($idc, $name);
+        //require_once 'view/compania/compania.php';
+        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Compania&a=Index')</script>";
+        
         require_once 'view/footer.php';
     }
 }
@@ -48,3 +65,4 @@ class ZonaController
         $alm->clave = $_REQUEST['clave'];
         $alm->pass_cifrado = password_hash($alm->clave, PASSWORD_DEFAULT, array("cost"=>12));
         $alm->usuarioID > 0 ? $this->model->Actualizar($alm) : $this->model->GuardarUsuario($alm);*/
+        

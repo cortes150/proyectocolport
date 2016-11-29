@@ -44,7 +44,8 @@ class LibroController
     public function agregarLibro(){
         require_once 'view/headers.php';
         require_once 'view/inicio.php';
-        require_once 'view/libro/libro-compania.php';
+        require_once 'view/compania/compania.php';
+        //require_once 'view/libro/libro-compania.php';
         require_once 'view/footer.php';
        //session_start();
          //    ob_start();

@@ -38,7 +38,7 @@ class Zona
 	public function listarColportorLider(){
         try
 		{
-			$stm = $this->pdo->prepare("SELECT `liderID` AS id, CONCAT(`nombre`, ' ',`apellido`) AS Nombre FROM `lider`  ORDER BY Nombre ASC");
+			$stm = $this->pdo->prepare("SELECT `usuarioID` AS id, CONCAT(`nick`, ' ',`tipo`) AS Nombre FROM `usuarioo`  ORDER BY nick ASC");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -52,7 +52,7 @@ class Zona
     public function listarZonas(){
         try
 		{
-			$stm = $this->pdo->prepare("SELECT `zonaID`, `nombre` FROM `zona` WHERE estado='si'");
+			$stm = $this->pdo->prepare("SELECT `zonaID`, `nombre` FROM `zona`");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -66,6 +66,7 @@ class Zona
     public function listarAsignados(){///actualizarce automaticamente
         try
 		{
+
 			/*$stm = $this->pdo->prepare("SELECT colportorID AS id, CONCAT(primer, ' ',segundo, ' ',paterno, ' ',materno) AS Nombre , zonaID as nombre, rol FROM colportor col  WHERE rol='lider' and zonaID is not NULL ORDER BY Nombre ASC");*/
 			/*$stm = $this->pdo->prepare("SELECT CONCAT(primer,' ',segundo,' ',paterno,' ',materno) as Nombre, zo.nombre, col.rol from colportor col, zona zo WHERE rol='lider' AND col.zonaID is not null and col.zonaID=zo.zonaID ORDER by Nombre ASC");
 			$stm->execute();
@@ -81,8 +82,23 @@ class Zona
 			die($e->getMessage());
 		}
     }
-    
 
+   public function CrearZonaa($idc, $name){
+        try
+		{
+		$usu=$_SESSION['usuarioID'];
+   		$sql="INSERT into zona (nombre, usuarioID, companiaID) values (?, ?, ?)";
+			$this->pdo->prepare($sql)->execute(array(
+				$name,
+				$usu,
+				$idc));
+		echo "<script> alert('Zona Creada...');</script>";
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+    }
 }
 ?>
 

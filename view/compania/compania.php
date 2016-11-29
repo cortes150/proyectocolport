@@ -21,12 +21,12 @@
 		<thead>
 	<tr >
 		<th>Nombre</th>
-		<th>Coodinador</th>
-		<th>Fecha Inicio</th>
-		<th>Fecha Fin</th>
+    <th>Fecha Inicio</th>
+    <th>Fecha Fin</th>
 		<th>Temporada</th>
 		<th>Estado</th>
-    <th colspan="2">Opciones</th>
+    <th>Misión</th>
+    <th>Agregar Archivo de CVS [Libros]</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -38,19 +38,17 @@
 			<td><?php echo $r->temporada; ?></td>
 			<td><?php echo $r->estado; ?></td>
       <td><?php echo $r->mision; ?></td>
-       <td><form action="?c=Libro&a=agregarLibro" method="post" enctype="multipart/form-data" name="form1">
-      
-      <strong>Agregar Archivo de CVS [Libros]</strong>
-      <input type="file" name="archivo" id="archivo">
+      <td>
+      <form action="?c=Libro&a=agregarLibro" method="post" enctype="multipart/form-data" name="form1">
+      <input type="file" class="form-control" name="archivo" id="archivo">
       <input type="hidden" name="companiaID" value="<?php echo $r->companiaID; ?>">
-      <input type="submit" name="button" class="btn" id="button" value="Agregar Libros">
+      <input type="submit" name="button" class="btn btn-danger" id="button" value="Agregar Libros">
       </form>
      </td>
-     <td><a class="btn btn-success" href="?c=Mision&a=Crear">Asignar Lider</a></td>
- 
-      <td><a class="btn btn-warning" href="?c=Zona&a=Inicio">Agregar Zonas</a></td>
-      <td><a class="btn btn-info" href="?c=Zona&a=zonasLIstadas">Ver zonas Agregadas</a></td>
-      <td><a class="btn btn-success" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>
+     <td><a class="btn btn-success btn-sm" href="?c=Mision&a=Crear">Asignar Lider</a></td>
+      <td><a class="btn btn-warning btn-sm" href="?c=Zona&a=CrearZona&id=<?php echo $r->companiaID; ?>">Agregar Zonas</a></td>
+      <td><a class="btn btn-info btn-sm" href="?c=Zona&a=zonasLIstadas">Ver zonas Agregadas</a></td>
+      <td><a class="btn btn-success btn-sm" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>
