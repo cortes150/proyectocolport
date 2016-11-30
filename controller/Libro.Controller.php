@@ -101,6 +101,23 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
         require_once 'view/libro/libro-integrantes.php';
         require_once 'view/footer.php';
     }
+
+    public function MiembroLibro(){
+        $miembrosID= $_REQUEST['miembroID'];
+        $librosID=$_REQUEST['libroID'];
+        $cantidades=$_REQUEST['cantidad'];
+        
+        $resultado = count($cantidades);
+        for ($i=0; $i <$resultado ; $i++) { 
+            if ($cantidades[$i]) {
+                $cantidadess[]=$cantidades[$i];
+            }
+        }
+        $this->model->AgregarLibroColportor($miembrosID, $librosID,$cantidadess);
+        //http://localhost:8080/COLPORTAJE/?c=Zona&a=Index
+        echo " <script>alert('Asignado con exito...'); </script> ";
+        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Zona&a=Index')</script>";
+    }
 }
 
 

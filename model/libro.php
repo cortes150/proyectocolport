@@ -161,10 +161,46 @@ class Libro
 
 			//}
     	}
-    	}
+/*foreach ($miembroID as $value) {
+    			$query= "INSERT INTO miembrogrupo (miembroID, grupoID)
+					VALUES (?,?)";
+				$this->pdo->prepare($query)->execute(array($value,$grupoID));
+    		}*/
 
-    
+public function AgregarLibroColportor($miembrosID, $librosID, $cantidades)
+	{
+	try
+		{
+			$resultado = count($cantidades);
+			//$CantMiembros=count($miembroID);
+
+			foreach ($miembrosID as $value) {
+				
+				for ($i=0; $i <$resultado ; $i++) { 
+				$sql="INSERT INTO miembrolibro(cantidad,miembroID,libroID) VALUES('$cantidades[$i]','$value','$librosID[$i]')";
+				 $this->pdo->prepare($sql)->execute();
+
+				$consul="SELECT cantidad from libro where libroID=$librosID[$i]";
+				$result=$this->pdo->query($consul);
+				$result->execute();
+
+			$CantidadActual = $result->fetch(PDO::FETCH_OBJ);
+				$resulA=$CantidadActual->cantidad-$cantidades[$i];
+				$sql2="UPDATE libro SET cantidad = '$resulA' WHERE libroID = '$librosID[$i]'";
+				$result2=$this->pdo->query($sql2);
+				$result2->execute();
+				}
+			}
 
 
+			
+		}
+	catch (Exception $e)
+		{
+			die($e->getMessage());
+		}
+	
 
+
+    	}}
  ?>
