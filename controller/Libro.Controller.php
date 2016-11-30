@@ -89,6 +89,18 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
     fclose($gestor);
 } 
     
-    }}
+    }
+
+    public function IntegrantesLibros(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio-lider.php';
+        
+      //  $grupoID=$_REQUEST['grupoID'];
+      ///  $this->model->librosIntegrantes($grupoID);
+      //  $this->model->mostrarColp($grupoID);
+        require_once 'view/libro/libro-integrantes.php';
+        require_once 'view/footer.php';
+    }
+}
 
 

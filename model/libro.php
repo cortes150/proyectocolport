@@ -114,6 +114,57 @@ class Libro
 			die($e->getMessage());
 		}
     }
-}
+
+    public function librosIntegrantes(){
+        try
+		{
+		    $grupoID=$_REQUEST['grupoID'];
+			foreach ($grupoID as $key => $value) {
+				# code...
+				$stm = $this->pdo->prepare("SELECT nombre, grupoID FROM grupo where grupoID=$value");
+				
+				$stm->execute();
+				
+				$nombreGupo= $stm->fetch(PDO::FETCH_OBJ);
+				$ar[]=$nombreGupo;
+			}
+			return $ar;
+		/*
+				
+
+			$stm = $this->pdo->prepare("SELECT * FROM compania ORDER BY nombreCampania ASC");
+			$stm->execute();
+
+			return $stm->fetchAll(PDO::FETCH_OBJ);*/
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+    }
+    public function mostrarColp($grupoID){
+
+    	//$grupoID=$_REQUEST['grupoID'];
+    	//foreach ($grupoID as $key => $value) {
+    		$stm2 = $this->pdo->prepare("SELECT concat(mi.primerNombre,' ',mi.segundoNombre,' ',mi.apellido) as nombres, mi.miembroID as miembroID FROM miembrogrupo mg,miembro mi where mg.grupoId = '$grupoID'AND mi.miembroID=mg.miembroID");
+				$stm2->execute();
+				$colp = $stm2->fetchAll(PDO::FETCH_OBJ);
+				
+				return $colp;
+				//$nombreColp[]=$colp->nombres;
+				//$nombreColp[]=$colp->miembroID;
+
+				//array(
+            	//$colp->nombres,
+            	//$colp->miembroID
+            	//);
+
+			//}
+    	}
+    	}
+
+    
+
+
 
  ?>

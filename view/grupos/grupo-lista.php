@@ -1,5 +1,5 @@
 <script src="assets/js/buscador.js"></script>
-<h3 class="text-center">Lista de integrantes del Grupo</h3>
+<h3 class="text-center">Lista de Integrantes del Grupo</h3>
 <hr>
 <div class="row">
 	<div class="col-md-12"><div class="input-group">
@@ -14,16 +14,16 @@
 	<table class="order-table table text-center">
 		<thead>
 	<tr >
-		<th class="text-center">Nombres</th>
 		<th class="text-center">Apellido</th>
+		<th class="text-center">Nombres</th>
 		<th class="text-center">Grupo</th>
 	</tr>
 	</thead>
 	<tbody >
 		<?php foreach($this->model->listarMiembrosColportoresGrupo() as $r): ?>
 		<tr>
-			<td><?php echo $r->nombre; ?></td>
 			<td><?php echo $r->apellid; ?></td>
+			<td><?php echo $r->nombre; ?></td>
 			<td><?php echo $r->grupos; ?></td>
       <td>
       </td>
