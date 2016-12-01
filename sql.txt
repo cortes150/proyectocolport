@@ -32,3 +32,15 @@ VALUES
 (NULL, 'Sergio7', 'Sanson7', 'Sanjines7', '132654787', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
 (NULL, 'Sergio8', 'Sanson8', 'Sanjines8', '132654788', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto'),
 (NULL, 'Sergio9', 'Sanson9', 'Sanjines9', '132654789', '2016-11-01', 'Bolivia', 'Beni', 'Universidad Adventista de Bolivia', 'Ingenieria', 'Telecom', 'ubicacion de foto');
+
+
+
+
+INSERT INTO `cliente` (`clienteID`, `primer`, `segundo`, `paterno`, `materno`, `direccion`, `fono`, `zonaID`) VALUES 
+(NULL, 'cliente3', 'cliente3', 'cliente3', 'cliente3', 'cliente3', '231456', NULL),
+(NULL, 'cliente4', 'cliente4', 'cliente4', 'cliente4', 'cliente4', '2319796', NULL), 
+(NULL, 'cliente5', 'cliente5', 'cliente5', 'cliente5', 'cliente5', '7972316', NULL), 
+(NULL, 'cliente6', 'cliente6', 'cliente6', 'cliente6', 'cliente6', '156231456', NULL), 
+(NULL, 'cliente7', 'cliente7', 'cliente7', 'cliente7', 'cliente7', '2135231456', NULL), 
+(NULL, 'cliente8', 'cliente8', 'cliente8', 'cliente8', 'cliente8', '986231456', NULL), 
+(NULL, 'cliente9', 'cliente9', 'cliente9', 'cliente9', 'cliente9', '23487456', NULL);

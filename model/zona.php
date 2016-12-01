@@ -183,6 +183,18 @@ class Zona
     		
     	}
     }
+public function Deuda(){
+    	$id=$_GET['id'];
+    	try {
+    	$query=$this->pdo->prepare("SELECT SUM( ml.precioLibro) precio FROM miembrolibro ml where ml.miembroID = '$id'");
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+
+    
 }
 ?>
 

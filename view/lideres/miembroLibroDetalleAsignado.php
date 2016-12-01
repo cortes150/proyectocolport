@@ -16,15 +16,17 @@
 </div>
 <div class="row">
 	<div class="col-md-2">
+	<?php $deuda=$this->model->Deuda(); ?>
 	<label>Deuda:</label></div>
 	<div class="col-md-2">
-		<label  class="form-control"></label>
+		<label  class="form-control"><?php echo $deuda->precio; ?></label>
 	</div>
 	<div class="col-md-2">
 	<label>Libro Vendido</label></div>
 	<div class="col-md-2">
 		<label  class="form-control"></label>
 	</div>
+
 	<div class="col-md-2">
 	<label>Libro Credito</label></div>
 	<div class="col-md-2">
