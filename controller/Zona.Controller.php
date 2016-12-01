@@ -90,6 +90,13 @@ public function guardar(){
         require_once 'view/lideres/index.php';
         require_once 'view/footer.php';
     }
+
+    public function MIembroLibroAsignado(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio-lider.php';
+        require_once 'view/lideres/miembroLibroDetalleAsignado.php';
+        require_once 'view/footer.php';
+    }
 }
 
 /*$alm = new Usuario();

@@ -15,7 +15,7 @@
 						</p>
 			<?php $stm=$this->model->PerfilLider(); ?>
 						<p>
-							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Crear Grupos</a>
+							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Grupos</a>
 						</p>
 					</div>
 					<div class="col-md-4">
@@ -23,7 +23,6 @@
 					</div>
 				</div>
 			</div> 
-				
 			<div class="row">
 				<div class="col-md-6">
 					<blockquote>
@@ -59,4 +58,38 @@
 		</div>
 	</div>
 </div>
+<hr>
+	<div class="row">
+		<div class="col-md-12">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Colportes Con libros Asignados</th>
+						<th>Libros Asignados</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+				<?php foreach($this->model->listarColportoresLibros() as $r): ?>
+					<tr>
+						<td><?php echo $r->name; ?></td>
+						<td>
+							<a class="btn btn-primary" href="?c=Zona&a=MIembroLibroAsignado&id=<?php echo $r->miemID; ?>">Ver Grupos</a>
+						</td>
+					</tr>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>

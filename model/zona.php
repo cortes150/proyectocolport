@@ -124,6 +124,46 @@ class Zona
 			die($e->getMessage());
 		}
     }
+
+    public function listarColportoresLibros(){
+    	// aqui la lista de libros asignados a cada colportor
+    	//SELECT mi.primerNombre, lb.titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '1' GROUP BY lb.titulo
+
+    	///LISTA DE MIEMBROS ASIGNADOS CON LIBROS SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',apellido) as nombre, ml.miembroID as miembroID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID
+    	try {
+    	$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID");
+    	$sql->execute();
+		return $sql->fetchAll(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+
+    public function listarColportoresLibrosID(){
+    	// aqui la lista de libros asignados a cada colportor
+    	//SELECT mi.primerNombre, lb.titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '1' GROUP BY lb.titulo
+
+    	///LISTA DE MIEMBROS ASIGNADOS CON LIBROS SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',apellido) as nombre, ml.miembroID as miembroID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID
+    	$id=$_GET['id'];
+    	try {
+    	$sql=$this->pdo->prepare("SELECT lb.titulo as titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '$id' GROUP BY lb.titulo");
+    	$sql->execute();
+		return $sql->fetchAll(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+
+    public function NombreMiembro(){
+    	$id=$_GET['id'];
+    	try {
+    	$query=$this->pdo->prepare("SELECT primerNombre, segundoNombre, apellido FROM miembro WHERE miembroID='$id'");
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
 }
 ?>
 
