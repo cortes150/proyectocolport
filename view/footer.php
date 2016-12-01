@@ -92,10 +92,10 @@
 </div>  <script src="assets/js/angular.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+	    <!--<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+	    <script src="assets/js/bootstrap-datetimepicker.es.js"></script>-->
         <script src="assets/js/ini.js"></script>
         <script src="assets/js/jquery.anexsoft-validator.js"></script>
-	   <script src="js/bootstrap-datetimepicker.min.js"></script>
-	   <script src="js/bootstrap-datetimepicker.es.js"></script>
 
     </body>
 </html>
