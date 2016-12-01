@@ -130,8 +130,9 @@ class Zona
     	//SELECT mi.primerNombre, lb.titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '1' GROUP BY lb.titulo
 
     	///LISTA DE MIEMBROS ASIGNADOS CON LIBROS SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',apellido) as nombre, ml.miembroID as miembroID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID
+    	$id=$_SESSION['usuarioID'];
     	try {
-    	$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID");
+    	$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID and lb.usuarioID = '$id' GROUP BY ml.miembroID");
     	$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
     	} catch (Exception $e) {

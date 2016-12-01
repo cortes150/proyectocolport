@@ -15,7 +15,7 @@
 						</p>
 			<?php $stm=$this->model->PerfilLider(); ?>
 						<p>
-							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Grupos</a>
+							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Libros</a>
 						</p>
 					</div>
 					<div class="col-md-4">
@@ -83,7 +83,7 @@
 		</div>
 	</div>
 
-<!-- Large modal -->
+<!-- Large modal 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
@@ -92,4 +92,4 @@
       ...
     </div>
   </div>
-</div>
+</div>-->
