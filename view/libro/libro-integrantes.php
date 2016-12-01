@@ -80,7 +80,7 @@
 						<input type="checkbox" name="libroID[]" value="<?php echo $r->libroID; ?>" id="CBId">
 					</td>
 					<td>
-					<div class="row">
+					<div class="row"><input type="hidden" name="precioLibro[]" value="<?php echo $r->precioOficial; ?>">
 						<div class="col-md-6" ><input type="text" name="cantidad[]" class="form-control" id="testP" style="display: none;" /></div>
 					</div>
 					</td>
