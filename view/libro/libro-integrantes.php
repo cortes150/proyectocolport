@@ -72,20 +72,18 @@
 			</thead>
 			<tbody>
 			<?php foreach($this->model->listarLibro() as $r): ?>
-					<form action>
 				<tr>
 					<td><?php echo $r->titulo; ?></td>
 					<td><?php echo $r->cantidad; ?></td>
 					<td>
-						<input type="checkbox" name="libroID[]" value="<?php echo $r->libroID; ?>" id="CBId">
+						<input type="checkbox" name="libroID[]" value="<?php echo $r->libroID; ?>">
 					</td>
 					<td>
-					<div class="row"><input type="hidden" name="precioLibro[]" value="<?php echo $r->precioOficial; ?>">
-						<div class="col-md-6" ><input type="text" name="cantidad[]" class="form-control" id="testP" style="display: none;" /></div>
+					<div class="row">
+						<div class="col-md-6" ><input type="hidden" name="precioLibro[]" value="<?php echo $r->precioOficial; ?>"><input type="text" name="cantidad[]" class="form-control"  /></div>
 					</div>
 					</td>
 				</tr>
-					</form>
 			<?php endforeach; ?>
 			</tbody>
 		</table>
@@ -120,22 +118,3 @@ onclick = "nombredeltext.disabled = !this.checked;
 <input type="checkbox" name="check5" onclick="check(9)" /> 
 <input type="text" name="text5" disabled /> Text 5 <br /> 
 </form> -->
-
-<form>
-    <input type="checkbox" name="CBName" id="CBId" /> Show Inputs
-    <p id="testP">Test</p>
-</form>
-<script type="text/javascript">
-    var checkActive = false;
-    $(document).ready(function() {
-        $('#CBId').change(function() {
-            if(checkActive == false) {
-                $('#testP').css('display', 'block');
-                checkActive = true;
-            } else {
-                $('#testP').css('display', 'none');
-                checkActive = false;
-            }
-        });
-    });
-</script>

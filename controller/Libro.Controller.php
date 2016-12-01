@@ -106,14 +106,14 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
         $miembrosID= $_REQUEST['miembroID'];
         $librosID=$_REQUEST['libroID'];
         $cantidades=$_REQUEST['cantidad'];
-        
+        $precioLibro=$_REQUEST['precioLibro'];
         $resultado = count($cantidades);
         for ($i=0; $i <$resultado ; $i++) { 
             if ($cantidades[$i]) {
                 $cantidadess[]=$cantidades[$i];
             }
         }
-        $this->model->AgregarLibroColportor($miembrosID, $librosID,$cantidadess);
+        $this->model->AgregarLibroColportor($miembrosID, $librosID,$cantidadess,$precioLibro);
         //http://localhost:8080/COLPORTAJE/?c=Zona&a=Index
         echo " <script>alert('Asignado con exito...'); </script> ";
         echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Zona&a=Index')</script>";

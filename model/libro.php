@@ -167,7 +167,7 @@ class Libro
 				$this->pdo->prepare($query)->execute(array($value,$grupoID));
     		}*/
 
-public function AgregarLibroColportor($miembrosID, $librosID, $cantidades)
+public function AgregarLibroColportor($miembrosID, $librosID, $cantidades, $precioLibro)
 	{
 	try
 		{
@@ -177,7 +177,7 @@ public function AgregarLibroColportor($miembrosID, $librosID, $cantidades)
 			foreach ($miembrosID as $value) {
 				
 				for ($i=0; $i <$resultado ; $i++) { 
-				$sql="INSERT INTO miembrolibro(cantidad,miembroID,libroID) VALUES('$cantidades[$i]','$value','$librosID[$i]')";
+				$sql="INSERT INTO miembrolibro(cantidad,miembroID,libroID,precioLibro) VALUES('$cantidades[$i]','$value','$librosID[$i]','$precioLibro[$i]')";
 				 $this->pdo->prepare($sql)->execute();
 
 				$consul="SELECT cantidad from libro where libroID=$librosID[$i]";
