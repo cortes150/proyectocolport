@@ -13,7 +13,7 @@
 						<p>
 							...
 						</p>
-			<?php $stm=$this->model->PerfilLider(); ?>
+						<?php $stm=$this->model->PerfilLider(); ?>
 						<p>
 							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Libros</a>
 						</p>

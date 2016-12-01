@@ -131,8 +131,24 @@ class Zona
 
     	///LISTA DE MIEMBROS ASIGNADOS CON LIBROS SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',apellido) as nombre, ml.miembroID as miembroID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID
     	$id=$_SESSION['usuarioID'];
+    	//SELECT * FROM miembrolibro ml, miembrogrupo mg, grupo gp,libro lb,miembro mi WHERE ml.miembroID = mg.miembroID and gp.usuarioID='7' AND mi.miembroID=mg.miembroID and ml.miembroID = mi.miembroID GROUP by ml.miembroID
+
+    	//para un solo miembro
+    	//SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE mg.miembroID='7' and gp.grupoID=mg.grupoID AND gp.usuarioID='8'
+    	//paratodos de un solo grupo
+    	//SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE gp.grupoID=mg.grupoID AND gp.usuarioID='7'
+
+    	//LISTA COLP CON DISTINTO GRUPO
+    	//SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID GROUP BY ml.miembroID
+
+    	///SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID AND mg.grupoID=gp.grupoID AND gp.usuarioID='7' GROUP BY ml.miembroID
+
+
     	try {
-    	$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID and lb.usuarioID = '$id' GROUP BY ml.miembroID");
+    	/*$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID and lb.usuarioID = '$id' GROUP BY ml.miembroID");*/
+    	$sql=$this->pdo->prepare("SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembro mi, miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID AND mg.grupoID=gp.grupoID AND gp.usuarioID='$id' AND mi.miembroID = mg.miembroID GROUP BY ml.miembroID");
+//SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',mi.apellido) as name, ml.miembroID as miemID FROM miembro mi, miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID AND mg.grupoID=gp.grupoID AND gp.usuarioID='8' GROUP BY ml.miembroID
+
     	$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
     	} catch (Exception $e) {
@@ -145,6 +161,8 @@ class Zona
     	//SELECT mi.primerNombre, lb.titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '1' GROUP BY lb.titulo
 
     	///LISTA DE MIEMBROS ASIGNADOS CON LIBROS SELECT concat(mi.primerNombre,' ', mi.segundoNombre,' ',apellido) as nombre, ml.miembroID as miembroID FROM miembrolibro ml, miembro mi, libro lb where ml.miembroID = mi.miembroID and ml.libroID=lb.libroID GROUP BY ml.miembroID
+
+    	//SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID AND mg.grupoID=gp.grupoID AND gp.usuarioID='8' GROUP BY ml.miembroID
     	$id=$_GET['id'];
     	try {
     	$sql=$this->pdo->prepare("SELECT lb.titulo as titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '$id' GROUP BY lb.titulo");
