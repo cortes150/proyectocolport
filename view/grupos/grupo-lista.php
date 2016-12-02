@@ -17,6 +17,7 @@
 		<th class="text-center">Apellido</th>
 		<th class="text-center">Nombres</th>
 		<th class="text-center">Grupo</th>
+		<th class="text-center">Foto</th>
 	</tr>
 	</thead>
 	<tbody >
@@ -25,6 +26,7 @@
 			<td><?php echo $r->apellid; ?></td>
 			<td><?php echo $r->nombre; ?></td>
 			<td><?php echo $r->grupos; ?></td>
+			<td><img  alt="" src="<?php echo $r->foto; ?>"></td>
       <td>
       </td>
 		</tr>
@@ -32,4 +34,3 @@
 	</tbody>
 	</table>
 </div>
-
