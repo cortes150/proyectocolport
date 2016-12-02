@@ -64,7 +64,7 @@ class Grupo
 			//SELECT gr.grupoID as idg, zo.zonaID as zid, gr.nombre name, zo.nombre as namezona from zona zo, usuarioo us, grupo gr where us.usuarioID='$id' and zo.usuarioID=us.usuarioID and gr.zonaID=zo.zonaID"
 			$idz=$_REQUEST['idz'];
 			$id=$_SESSION['usuarioID'];
-			$stm = $this->pdo->prepare("SELECT g.nombre as nombreGrupo,z.nombre as nombreZona,grupoID from grupo g, zona z WHERE g.usuarioID = '$id' and g.zonaID=z.zonaID");
+			$stm = $this->pdo->prepare("SELECT g.nombre as nombreGrupo,z.nombre as nombreZona,grupoID, z.zonaID as zonaID from grupo g, zona z WHERE g.usuarioID = '$id' and g.zonaID=z.zonaID");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

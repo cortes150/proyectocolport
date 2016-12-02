@@ -100,6 +100,8 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
       //  $this->model->mostrarColp($grupoID);
         require_once 'view/libro/libro-integrantes.php';
         require_once 'view/footer.php';
+       //$idz=$_REQUEST['zonaID'];
+
     }
 
     public function MiembroLibro(){

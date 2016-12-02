@@ -26,6 +26,7 @@
       <td>
       <div class="checkbox">
 	    <label>
+      <input type="hidden" name="zonaID" value="<?php echo $r->zonaID; ?>">
       	<input type="checkbox" name="grupoID[]" class="form-control" value="<?php echo $r->grupoID; ?>">
       	</label>
       	</div>

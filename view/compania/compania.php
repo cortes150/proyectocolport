@@ -45,7 +45,7 @@
       <input type="submit" name="button" class="btn btn-danger" id="button" value="Agregar Libros">
       </form>
      </td>
-     <td><a class="btn btn-success btn-sm" href="?c=Zona&a=misionCrear">Asignar Lider</a></td>
+     <td><a class="btn btn-success btn-sm" href="?c=Zona&a=misionCrear&id=<?php echo $r->companiaID; ?>">Asignar Lider</a></td>
       <td><a class="btn btn-warning btn-sm" href="?c=Zona&a=CrearZona&id=<?php echo $r->companiaID; ?>">Agregar Zonas</a></td>
       <td><a class="btn btn-info btn-sm" href="?c=Zona&a=zonasLIstadas&id=<?php echo $r->companiaID; ?>">Ver zonas Agregadas</a></td>
       <td><a class="btn btn-success btn-sm" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>

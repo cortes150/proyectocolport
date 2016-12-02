@@ -1,3 +1,5 @@
+<h3 class="text-center">BienVenido Colportor</h3>
+
 <?php $tcontado=0;
 	$tcredito=0; 
 	$disponible=0;?>

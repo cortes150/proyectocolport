@@ -57,9 +57,10 @@ class Zona
 		}
     }
     public function listarZonas(){
+    	$idcampania=$_REQUEST['id'];
         try
 		{ //SELECT * FROM zona WHERE zonaID NOT IN (SELECT miembrozona.zonaID FROM miembrozona)
-			$stm = $this->pdo->prepare("SELECT `zonaID`, `nombre` FROM `zona` WHERE zonaID NOT IN (SELECT miembrozona.zonaID FROM miembrozona)");
+			$stm = $this->pdo->prepare("SELECT `zonaID`, `nombre` FROM `zona` WHERE zonaID NOT IN (SELECT miembrozona.zonaID FROM miembrozona) and companiaID='$idcampania'");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -165,7 +166,7 @@ class Zona
     	//SELECT * FROM miembrolibro ml,miembrogrupo mg, grupo gp WHERE ml.miembroID = mg.miembroID AND mg.grupoID=gp.grupoID AND gp.usuarioID='8' GROUP BY ml.miembroID
     	$id=$_GET['id'];
     	try {
-    	$sql=$this->pdo->prepare("SELECT lb.titulo as titulo, SUM( ml.cantidad) as ls FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '$id' GROUP BY lb.titulo");
+    	$sql=$this->pdo->prepare("SELECT lb.titulo as titulo, SUM( ml.cantidad) as ls,ml.libroID as libroID FROM miembrolibro ml, libro lb, miembro mi where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '$id' GROUP BY lb.titulo");
     	$sql->execute();
 		return $sql->fetchAll(PDO::FETCH_OBJ);
     	} catch (Exception $e) {
@@ -186,13 +187,63 @@ class Zona
 public function Deuda(){
     	$id=$_GET['id'];
     	try {
-    	$query=$this->pdo->prepare("SELECT SUM( ml.precioLibro) precio FROM miembrolibro ml where ml.miembroID = '$id'");
+    	$query=$this->pdo->prepare("SELECT SUM(ml.precioLibro) precio FROM miembrolibro ml where ml.miembroID = '$id'");
     	$query->execute();
 		return $query->fetch(PDO::FETCH_OBJ);
     	} catch (Exception $e) {
     		
     	}
     }
+
+public function TotalLibrosAsignados(){
+    	$id=$_GET['id'];
+    	try {
+    	$query=$this->pdo->prepare("SELECT SUM(cantidad) as tla FROM miembrolibro WHERE miembroID='$id'");
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+
+    public function Disponible($libroID){
+    	$id=$_GET['id'];
+    	try {
+    	$query=$this->pdo->prepare("SELECT SUM( ml.cantidad-vl.cantidad) as disponible FROM miembrolibro ml, libro lb, miembro mi, ventalibro vl, venta v where mi.miembroID=ml.miembroID and ml.libroID = lb.libroID and mi.miembroID = '$id' and v.ventaID=vl.ventaID AND lb.libroID='$libroID' and vl.libroID=ml.libroID GROUP BY lb.titulo");
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+
+    public function LibroContado($libroID){
+    	$id=$_GET['id'];
+    	try {
+    	//$query=$this->pdo->prepare("SELECT SUM(vl.cantidad) cant FROM pago p, venta v, ventalibro vl, usuarioo us WHERE v.ventaID=p.ventaID and p.TipoDePago='contado' and vl.libroID='$libroID' and us.miembroID='$id'");
+    	$query=$this->pdo->prepare("SELECT SUM(vl.cantidad) cant FROM libro li, venta v,pago p, ventalibro vl, usuarioo us WHERE v.ventaID= p.ventaID and vl.ventaID=v.ventaID and us.miembroID='$id' and li.libroID=vl.libroID and li.libroID='$libroID' and p.TipoDePago='contado' GROUP BY p.TipoDePago, vl.libroID");
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+    
+
+    public function LibroCredito($libroID){
+    	$id=$_GET['id'];
+    	try {
+    	//$query=$this->pdo->prepare("SELECT SUM(vl.cantidad) Cant FROM pago p, venta v, ventalibro vl, usuarioo us WHERE v.ventaID=p.ventaID and p.TipoDePago='credito' and vl.libroID='$libroID' and us.miembroID='$id'");
+    	//$query=$this->pdo->prepare("SELECT SUM(vl.cantidad) as credito FROM venta v,pago p, ventalibro vl, usuarioo us WHERE v.ventaID= p.ventaID and p.TipoDePago='credito' and vl.ventaID=v.ventaID and us.miembroID='$id' GROUP BY vl.libroID");
+    		$query=$this->pdo->prepare("SELECT SUM(vl.cantidad) credito FROM libro li, venta v,pago p, ventalibro vl, usuarioo us WHERE v.ventaID= p.ventaID and vl.ventaID=v.ventaID and us.miembroID='$id' and li.libroID=vl.libroID and li.libroID='$libroID' and p.TipoDePago='credito' GROUP BY p.TipoDePago, vl.libroID");
+    		
+    	$query->execute();
+		return $query->fetch(PDO::FETCH_OBJ);
+    	} catch (Exception $e) {
+    		
+    	}
+    }
+    //SELECT * FROM venta v,pago p, ventalibro vl, usuarioo us WHERE v.ventaID= p.ventaID and p.TipoDePago='contado' and vl.ventaID=v.ventaID and us.miembroID='2'
 
     
 }

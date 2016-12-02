@@ -34,7 +34,7 @@ class GrupoController
 
     public function AddColportor(){
         require_once 'view/headers.php';
-        require_once 'view/inicio.php';
+        require_once 'view/inicio-lider.php';
         require_once 'view/grupos/grupos-add-colporto.php';
         require_once 'view/footer.php';
     }

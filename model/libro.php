@@ -47,9 +47,11 @@ class Libro
 	}
 
 	public function listarLibro(){
+		//$id=$_REQUEST['zonaID'];
         try
 		{
-			$stm = $this->pdo->prepare("SELECT * FROM libro ORDER BY titulo ASC");
+			$idz=$_REQUEST['zonaID'];
+			$stm = $this->pdo->prepare("SELECT * FROM libro l,zona z WHERE z.zonaID='$idz' AND l.companiaID=z.companiaID ORDER BY titulo ASC");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

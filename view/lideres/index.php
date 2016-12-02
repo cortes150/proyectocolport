@@ -15,7 +15,7 @@
 						</p>
 						<?php $stm=$this->model->PerfilLider(); ?>
 						<p>
-							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Libros</a>
+							<a class="btn btn-primary btn-large" href="?c=Grupo&a=Index&idz=<?php echo $stm->zonaID;?>">Ver Grupos</a>
 						</p>
 					</div>
 					<div class="col-md-4">
@@ -74,7 +74,7 @@
 					<tr>
 						<td><?php echo $r->name; ?></td>
 						<td>
-							<a class="btn btn-primary" href="?c=Zona&a=MIembroLibroAsignado&id=<?php echo $r->miemID; ?>">Ver Grupos</a>
+							<a class="btn btn-primary" href="?c=Zona&a=MIembroLibroAsignado&id=<?php echo $r->miemID; ?>">Ver Detalles</a>
 						</td>
 					</tr>
 				<?php endforeach; ?>
