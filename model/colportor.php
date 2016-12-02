@@ -195,6 +195,8 @@ public function TotalLibrosAsignados(){
     	$sq->execute();
 		return $sq->fetchAll(PDO::FETCH_OBJ);
     }
+
+    
 }
 
  ?>

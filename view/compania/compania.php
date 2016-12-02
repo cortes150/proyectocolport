@@ -1,10 +1,8 @@
 <script src="assets/js/buscador.js"></script>
-<h1>Lista de Campañas</h1>
+<h3>Lista de Campañas</h3>
 <div class="well well-sm text-right">
     <a class="btn btn-success" href="?c=Compania&a=Crear">Agregar Campañas</a>
 </div>
-
-<hr>
 <div class="row">
 	<div class="col-md-12"><div class="input-group">
   <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
@@ -13,9 +11,6 @@
   </div>
 </div></div>
 </div>
-
-<hr>
-<hr>
 <div class="datagrid">
 	<table class="order-table table">
 		<thead>
@@ -42,13 +37,13 @@
       <form action="?c=Libro&a=agregarLibro" method="post" enctype="multipart/form-data" name="form1">
       <input type="file" class="form-control" name="archivo" id="archivo">
       <input type="hidden" name="companiaID" value="<?php echo $r->companiaID; ?>">
-      <input type="submit" name="button" class="btn btn-danger" id="button" value="Agregar Libros">
+      <button type="submit" name="button" class="btn btn-danger" id="button">Agregar <span class="glyphicon glyphicon-book" aria-hidden="true"></span></button>
       </form>
      </td>
-     <td><a class="btn btn-success btn-sm" href="?c=Zona&a=misionCrear&id=<?php echo $r->companiaID; ?>">Asignar Lider</a></td>
-      <td><a class="btn btn-warning btn-sm" href="?c=Zona&a=CrearZona&id=<?php echo $r->companiaID; ?>">Agregar Zonas</a></td>
-      <td><a class="btn btn-info btn-sm" href="?c=Zona&a=zonasLIstadas&id=<?php echo $r->companiaID; ?>">Ver zonas Agregadas</a></td>
-      <td><a class="btn btn-success btn-sm" href="?c=Zona&a=zonasLIstadas">Agregadas Libros</a></td>
+     <td><a class="btn btn-success" href="?c=Zona&a=misionCrear&id=<?php echo $r->companiaID; ?>"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></td>
+      <td><a class="btn btn-warning" href="?c=Zona&a=CrearZona&id=<?php echo $r->companiaID; ?>"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a></td>
+      <td><a class="btn btn-info" href="?c=Zona&a=zonasLIstadas&id=<?php echo $r->companiaID; ?>"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></td>
+      <td><a class="btn btn-success" href="?c=Zona&a=LibrosAsignadosZonas&id=<?php echo $r->companiaID; ?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span></a></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>

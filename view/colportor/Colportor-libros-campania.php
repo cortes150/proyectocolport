@@ -12,7 +12,15 @@
 		<tr>
 			<td><?php echo $r->titulo; ?></td>
 			<td><?php echo $r->resumen; ?></td>
-			<td><?php echo $r->imagen; ?></td>
+			<td>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<img alt="Bootstrap Image Preview" style="width: 20%; height: 30%;" src="<?php echo $r->imagen; ?>" class="img-thumbnail" />
+					</div>
+				</div>
+			</div>
+			</td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>

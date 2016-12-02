@@ -37,11 +37,14 @@ class Usuario
 		try
 		{
 				$sql = "INSERT INTO usuarioo (nick,clave,tipo,miembroID)
-		        VALUES (?,?,null,null)";
+		        VALUES (?,?,?,?)";
 
             $this->pdo->prepare($sql)->execute(array(
             	$datos->nick,
-            	$datos->pass_cifrado));
+            	$datos->pass_cifrado,
+            	$datos->tipo,
+            	$datos->miembroID));
+            echo "<script>alert('Usuario Creado con exito!!!')</script>";
 		}
         catch (Exception $e)
 		{
@@ -111,6 +114,12 @@ class Usuario
 			die($e->getMessage());
 		}
 	}
+
+	public function ColportorMiembro(){
+        $sq=$this->pdo->prepare("SELECT miembroID, concat(primerNombre,' ',segundoNombre,' ',apellido) nombre from miembro ORDER BY nombre");
+        $sq->execute();
+        return $sq->fetchAll(PDO::FETCH_OBJ);
+    }
 
 }
 

@@ -31,6 +31,7 @@
     <th>Universidad</th>
     <th>Facultad</th>
     <th>Carrerra</th>
+    <th>Foto</th>
   </tr>
   </thead>
   <tbody>
@@ -46,7 +47,7 @@
       <td><?php echo $r->universidad; ?></td>
       <td><?php echo $r->facultad; ?></td>
       <td><?php echo $r->carrera; ?></td>
-      <td>
+      <td><img src="<?php echo $r->foto; ?>">
       </td>
     </tr>
     <?php endforeach; ?>

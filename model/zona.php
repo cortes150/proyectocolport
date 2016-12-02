@@ -245,7 +245,22 @@ public function TotalLibrosAsignados(){
     }
     //SELECT * FROM venta v,pago p, ventalibro vl, usuarioo us WHERE v.ventaID= p.ventaID and p.TipoDePago='contado' and vl.ventaID=v.ventaID and us.miembroID='2'
 
+public function LibrosAsignadosZonasCampaniaa(){///actualizarce automaticamente
+        try
+        {
+            $id=$_REQUEST['id'];
+
+            $stm = $this->pdo->prepare("SELECT titulo, resumen, imagen FROM libro WHERE companiaID='$id'");
+            $stm->execute();
+
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+        }
+        catch(Exception $e)
+        {
+            die($e->getMessage());
+        }
     
+ }
 }
 ?>
 

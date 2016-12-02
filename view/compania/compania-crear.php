@@ -2,14 +2,14 @@
 <div class="row">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-<h3 class="text-center">CREAR CAMPAÑA</h3>
+<h3 class="text-center">Crear Campaña</h3>
 <hr>
 </div>
 	<div class="col-md-2"></div>
 </div>
 <div class="row">
-<div class="col-md-2"></div>
-<div class="col-md-8">
+<div class="col-md-3"></div>
+<div class="col-md-6">
 <form action="?c=compania&a=Guardar" method="POST">
 	<div class="form-group">
 		<label for="">Nombre de Campaña:</label>
@@ -42,9 +42,9 @@
 
 	<input type="hidden" name="estado" value="Activo">
 	</div>
-	<button type="submit" class="form-control">Registrar</button>
+	<button type="submit" class="btn btn-primary btn-block">Registrar</button>
 </form>
 </div>
-<div class="col-md-2"></div>
+<div class="col-md-3"></div>
 </div>
 <!--verifiacar las inserciones de cada vez q se hace un refresh-->

@@ -22,7 +22,7 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="item active">
-						<img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
+						<img alt="Carousel Bootstrap First" src="https://i.ytimg.com/vi/ec9vblzR5WQ/maxresdefault.jpg" />
 						<div class="carousel-caption">
 							<h4>
 								Aqui colocas un subtitulo
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
+						<img alt="Carousel Bootstrap Second" src="https://i.ytimg.com/vi/FbE57UMkts8/maxresdefault.jpg" />
 						<div class="carousel-caption">
 							<h4>
 								Aqui colocas el segundo Subtitulo
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
+						<img alt="Carousel Bootstrap Third" src="https://i.ytimg.com/vi/8W1WLXty-VI/maxresdefault.jpg" />
 						<div class="carousel-caption">
 							<h4>
 								Third Thumbnail label
@@ -64,16 +64,30 @@
 		<div class="col-md-12">
 			<div class="jumbotron">
 				<h2>
-					Hello, world!
+					Hola mi estimado hermano(a), amigo(a)
 				</h2>
-				<p>
-					This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+				<hr>
+				<p class="text-center">
+					 Primero que nada quiero darte la Bienvenida y Felicitarte por el deseo que ha surgido en ti de emprender la obra del Colportaje Evangelico. Creeme que Dios es el que te esta llamando para emprender esta gran bendicion en tu vida.  Quien te habla actualmente es un Estudiante de Informatica y por el momento un excolportor, digo ex porque no estoy actualmente colportando, sin embargo muy pronto estare nuevamente en las filas del colportaje.
 				</p>
 				<p>
-					<a class="btn btn-primary btn-large" href="#">Learn more</a>
+					<a class="btn btn-primary btn-large" href="#" data-toggle="modal" data-target=".bs-example-modal-lg">Ver Video</a>
 				</p>
 			</div>
 		</div>
 	</div>
+</div>
+
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+<div class="bs-example" data-example-id="responsive-embed-16by9-iframe-youtube">
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe class="embed-responsive-item" width="1366" height="768" src="https://www.youtube.com/embed/1b_R4ndDOBk" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+    </div>
+  </div>
 </div>
 

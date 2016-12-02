@@ -1,9 +1,10 @@
 <div class="container">
+<h3 class="text-center">Reporte Grupo</h3>
 <div style="background-color: #f4f4f4; border-radius: 2px;">
 	<div class="row">
 		<div class="col-md-3"></div>
 		<div class="col-md-6">
-			<h4 class="text-center"><?php echo $alm[1]; ?></h4>
+			<h4 class="text-center"></h4>
 		</div>
 		<div class="col-md-3"></div>
 	</div>
@@ -11,7 +12,7 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-3">
 		<label for="">Lider:</label></div>
-		<div class="col-md-7"><?php echo $alm[0]; ?></div>
+		<div class="col-md-7"></div>
 		<div class="col-md-1"></div>
 
 	</div>
@@ -65,14 +66,12 @@
 				<th>Libros a Credito</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody><?php foreach($this->model->ReporteGrupoZona() as $r): ?>
 			<tr>
-				<td>Heraldos del Rey</td>
-				<td>###</td>
-				<td>###</td>
-				<td>###</td>
-				<td>###</td>
+				<td><?php echo $r->nombre; ?></td>
+				<td><?php echo $r->cantidad; ?></td>
 			</tr>
+			<?php endforeach; ?>
 		</tbody>
 	</table>
 </div>

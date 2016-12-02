@@ -64,7 +64,7 @@ public function guardar(){
         require_once 'view/lideres/listaZona.php';
         require_once 'view/footer.php';
         $id=$_REQUEST['id'];
-        $this->model->listarAsignadosCampania($id);
+        $this->model->LibrosAsignadosZonasCampaniaa($id);
     }
     public function GuardarZona(){
         require_once 'view/headers.php';
@@ -96,6 +96,15 @@ public function guardar(){
         require_once 'view/inicio-lider.php';
         require_once 'view/lideres/miembroLibroDetalleAsignado.php';
         require_once 'view/footer.php';
+    }
+
+    public function LibrosAsignadosZonas(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio.php';
+        require_once 'view/lideres/listaZonaCompania.php';
+        require_once 'view/footer.php';
+        $id=$_REQUEST['id'];
+        $this->model->LibrosAsignadosZonasCampaniaa($id);
     }
 }
 

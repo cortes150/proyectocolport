@@ -38,6 +38,22 @@ class Reporte
 		}
     }
 
+    public function ReporteGrupoZona(){
+        try
+		{
+			$query = $this->pdo->prepare("SELECT g.nombre nombre,SUM(ml.cantidad) as cantidad FROM zona z, grupo g, miembrogrupo mg,miembrolibro ml WHERE g.zonaID=z.zonaID and mg.grupoID=g.grupoID and ml.miembroID=mg.miembroID GROUP BY g.nombre");
+
+			$query->execute();
+			$lider = $query->fetch(PDO::FETCH_OBJ);
+			
+			return $lider;
+			//return $query2->fetch(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+    }
 }
 
  ?>

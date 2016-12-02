@@ -9,12 +9,12 @@ session_start();
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 						 <span class="sr-only">Menu</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="?c=Colport&a=Inicio">Inicio</a>
+					</button> <a class="navbar-brand" href="?c=Colport&a=Inicio"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> - Inicio</a>
 				</div>
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							<a href="?c=Colport&a=LibrosCampaña">Ver Libros de la Campaña</a>
+							<a href="?c=Colport&a=LibrosCampaña"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> - Ver Libros de la Campaña</a>
 						</li>
 						
 					</ul>
