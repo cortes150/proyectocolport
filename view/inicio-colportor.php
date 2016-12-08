@@ -16,7 +16,12 @@ session_start();
 						<li>
 							<a href="?c=Colport&a=LibrosCampaña"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> - Ver Libros de la Campaña</a>
 						</li>
-						
+						<li>
+							<a href="?c=Ventas&a=ClienteFormulario"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> - Crear Cliente</a>
+						</li>
+						<li>
+							<a href="?c=Ventas&a=index"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> - Realizar Ventas</a>
+						</li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">

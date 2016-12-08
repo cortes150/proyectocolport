@@ -93,8 +93,8 @@ class Usuario
 				$_SESSION['usuarioID']=$resultado->usuarioID;
 				$_SESSION['Tipo']=$resultado->tipo;
 				$_SESSION['miembroID']=$resultado->miembroID;
-				//echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Colport&a=Inicio')</script>";
-				echo "<script>window.location.assign('http://localhost/Colport/?c=Colport&a=Inicio')</script>";
+				echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Colport&a=Inicio')</script>";
+				//echo "<script>window.location.assign('http://localhost/Colport/?c=Colport&a=Inicio')</script>";
 			}
 				//session_start();
 				
