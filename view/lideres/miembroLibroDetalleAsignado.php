@@ -20,7 +20,7 @@
 <div class="row">
 	<div class="col-md-2">
 	<?php $deuda=$this->model->Deuda(); ?>
-	<label>Deuda:</label></div>
+	<label class="text-right">Deuda:</label></div>
 	<div class="col-md-2">
 		<label  class="form-control"><?php echo $deuda->precio; ?></label>
 	</div>
@@ -30,25 +30,9 @@
 		<label  class="form-control"><?php echo $tcontado; ?></label>
 	</div>
 
-	<div class="col-md-2">
-	<label>Libro Credito</label></div>
-	<div class="col-md-2">
-		<label  class="form-control"></label>
-	</div>
 </div>
-<div class="row">
-	<div class="col-md-4">
+
 	<?php $tla=$this->model->TotalLibrosAsignados(); ?>
-	<label>Total Libros Asignados</label></div>
-	<div class="col-md-2">
-		<label  class="form-control"></label>
-	</div>
-	<div class="col-md-4">
-	<label>Total Libros Disponibles</label></div>
-	<div class="col-md-2">
-		<label  class="form-control"></label>
-	</div>
-</div>
 <div class="row">
 	<table class="table">
 		<thead>
@@ -115,10 +99,10 @@
 			<?php endforeach; ?>
 <tr>
 	<th>Totales</th>
-	<th><?php echo $tla->tla; ?></th>
-	<th><?php echo $tcontado; ?></th>
-	<th><?php echo $tcredito; ?></th>
-	<th><?php echo $disponible;?></th>
+	<th>T. Libro Asignado: <?php echo $tla->tla; ?></th>
+	<th>T. libro al Contado: <?php echo $tcontado; ?></th>
+	<th>T. libro Credito: <?php echo $tcredito; ?></th>
+	<th>T. Disponible: <?php echo $disponible;?></th>
 </tr>
 			
 		</tbody>
