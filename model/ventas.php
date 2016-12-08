@@ -146,6 +146,24 @@ class Ventas
 		}
 			
     }
+
+    public function ListarMiembros(){
+        try
+		{
+			$id=$_SESSION['miembroID'];
+       	$sql=$this->pdo->prepare("SELECT grupoID FROM `miembrogrupo` WHERE miembroID='$id'");
+    	$sql->execute();
+
+		$companiaID =$sql->fetch(PDO::FETCH_OBJ);
+		$sq=$this->pdo->prepare("SELECT CONCAT(mi.primerNombre,' ', mi.segundoNombre) as nombre, mi.apellido as apellid, gr.nombre as grupos, mi.foto foto FROM miembrogrupo mg, miembro mi, grupo gr WHERE mg.grupoID='$companiaID->grupoID' AND gr.grupoID=mg.grupoID and mi.miembroID=mg.miembroID ORDER BY apellid");
+    	$sq->execute();
+		return $sq->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+    }
 }
 
  ?>

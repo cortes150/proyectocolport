@@ -22,6 +22,9 @@
 						<li>
 							<a href="?c=Ventas&a=index"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> - Realizar Ventas</a>
 						</li>
+						<li>
+							<a href="?c=Ventas&a=Integrantes"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> - Integrantes Grupo</a>
+						</li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">

@@ -111,7 +111,7 @@ class Grupo
 			//SELECT * FROM miembro WHERE miembroID NOT IN (SELECT miembrogrupo.miembroID FROM miembrogrupo)
 
 			//$id=$_SESSION['usuarioID'];
-			$stm = $this->pdo->prepare("SELECT CONCAT(mi.primerNombre,' ', mi.segundoNombre) as nombre, mi.apellido as apellid, gr.nombre as grupos, mi.foto foto FROM miembrogrupo mg, miembro mi, grupo gr WHERE mg.grupoID='$idg' AND gr.grupoID=mg.grupoID and mi.miembroID=mg.miembroID");
+			$stm = $this->pdo->prepare("SELECT CONCAT(mi.primerNombre,' ', mi.segundoNombre) as nombre, mi.apellido as apellid, gr.nombre as grupos, mi.foto foto FROM miembrogrupo mg, miembro mi, grupo gr WHERE mg.grupoID='$idg' AND gr.grupoID=mg.grupoID and mi.miembroID=mg.miembroID ORDER BY nombre");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

@@ -3,10 +3,12 @@
 <?php $tcontado=0;
 	$tcredito=0; 
 	$disponible=0;?>
+			<?php $stm=$this->model->NombreMiembro(); ?>
+<h3 class="text-center">Compañia a la que pertenece: <?php echo $stm->compania; ?> </h3>
+			
 <h3 class="text-center">Detalle de Libros Asigado</h3>
 <hr>
 <div class="row">
-			<?php $stm=$this->model->NombreMiembro(); ?>
 			<div class="form-group">
 			<div class="col-md-3"><label for="">
 				Nombre Colportor</label></div>

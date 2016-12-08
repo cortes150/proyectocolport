@@ -100,14 +100,14 @@ class Colportor
 
     /*detalle colportor*/
     public function NombreMiembro(){
-    	$id=$_SESSION['miembroID'];
-    	try {
-    	$query=$this->pdo->prepare("SELECT primerNombre, segundoNombre, apellido FROM miembro WHERE miembroID='$id'");
-    	$query->execute();
-		return $query->fetch(PDO::FETCH_OBJ);
-    	} catch (Exception $e) {
-    		
-    	}
+        $id=$_SESSION['miembroID'];
+        try {
+        $query=$this->pdo->prepare("SELECT mi.primerNombre as primerNombre, mi.segundoNombre as segundoNombre, mi.apellido as apellido, com.nombreCampania as compania FROM miembro mi, usuarioo us, zona zo, compania com WHERE mi.miembroID='$id' and us.miembroID=mi.miembroID and zo.companiaID=com.companiaID");
+        $query->execute();
+        return $query->fetch(PDO::FETCH_OBJ);
+        } catch (Exception $e) {
+            
+        }
     }
 public function Deuda(){
     	$id=$_SESSION['miembroID'];

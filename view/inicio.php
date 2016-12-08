@@ -15,10 +15,10 @@ session_start();
 						<li class="">
 							<a href="?c=usuario&a=index"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> - Usuarios</a>
 						</li>
-						<li class="">
+						<!--<li class="">
 							<a href="?c=Compania&a=Index"><span class="glyphicon glyphicon-tower" aria-hidden="true"></span> - Campañas</a>
 						</li>
-						<!--<li class="">
+						<li class="">
 							<a href="?c=Libro&a=Index">Libros</a>
 						</li>-->
 						<li class="">

@@ -66,5 +66,10 @@ public function CrearCli(){
         require_once 'view/footer.php';
     }
 
-
+public function Integrantes(){
+        require_once 'view/headers.php';
+        require_once 'view/inicio-colportor.php';
+        require_once 'view/ventas/integrantesGrupo.php';
+        require_once 'view/footer.php';
+    }
 }
