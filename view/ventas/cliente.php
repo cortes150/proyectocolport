@@ -1,5 +1,5 @@
 <h3 class="text-center">Crear Cliente</h3>
-<form action="">
+<form action="?c=Ventas&a=CrearCli" method="post">
 <div class="form-group">
 	<label>Nombres</label>
 	<input type="text" name="primer" class="form-control" placeholder="Primer Nombre" required>

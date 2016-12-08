@@ -1,6 +1,6 @@
-<?php
-session_start();
-        ob_start();?>
+<!-- <?php
+//session_start();
+  //      ob_start();?> -->
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
