@@ -66,6 +66,7 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
     fclose($gestor);
 }        //require_once 'view/cuerpo.php';
         require_once 'view/colportor/Colportor.php';
+       // require_once 'view/compania/compania.php';
         require_once 'view/footer.php';      
 }
 

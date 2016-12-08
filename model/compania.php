@@ -41,8 +41,8 @@ class Compania
 	{
 		try
 		{
-			session_start();
-    		ob_start();
+			//session_start();
+    		//ob_start();
             $sql = "INSERT INTO compania (nombreCampania,fechaInicio,fechaFinal,temporada,estado,mision,usuarioID)
 		        VALUES ( ?, ?, ?, ?, ?,?,?)";
 

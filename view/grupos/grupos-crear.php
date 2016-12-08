@@ -6,7 +6,7 @@
 			<div class="form-group">
 				<label>Nombre del Grupo</label>
 				<input type="text" class="form-control" name="nombre">
-				<input type="text" name="zonaID" value="<?php echo $_GET['idz']; ?>">
+				<input type="hidden" name="zonaID" value="<?php echo $_GET['idz']; ?>">
 
 			</div>
 			<input type="submit" class="form-control" value="Crear">

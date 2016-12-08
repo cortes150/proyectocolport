@@ -29,7 +29,7 @@ class GrupoController
         $idz= $_REQUEST['zonaID'];
         $this->model->GuardarGrupoM($nombre,$idz);
          
-        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Grupo&a=Index&idz=$idz')</script>";
+        echo "<script>window.location.assign('http://localhost/Colport/?c=Grupo&a=Index&idz=$idz')</script>";
     }
 
     public function AddColportor(){
@@ -47,7 +47,7 @@ class GrupoController
         require_once 'view/inicio.php';
         require_once 'view/grupos/grupos.php';
         require_once 'view/footer.php';*/
-        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Grupo&a=Index&idz=$idz')</script>";   
+        echo "<script>window.location.assign('http://localhost/Colport/?c=Grupo&a=Index&idz=$idz')</script>";   
     }
 
     public function ListaGrupo(){

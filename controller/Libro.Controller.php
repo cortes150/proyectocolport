@@ -118,7 +118,7 @@ if (($gestor = fopen($tmpEXCEL, "r")) !== FALSE) {
         $this->model->AgregarLibroColportor($miembrosID, $librosID,$cantidadess,$precioLibro);
         //http://localhost:8080/COLPORTAJE/?c=Zona&a=Index
         echo " <script>alert('Asignado con exito...'); </script> ";
-        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Zona&a=Index')</script>";
+        echo "<script>window.location.assign('http://localhost/Colport/?c=Zona&a=Index')</script>";
     }
 }
 

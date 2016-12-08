@@ -10,8 +10,7 @@ class CompaniaController
     public function Guardar(){
         require_once 'view/headers.php';
         require_once 'view/inicio.php';
-        require_once 'view/compania/compania.php';
-        require_once 'view/footer.php';
+       
         $Compania = new Compania();
 
         //$alm->misionID = $_REQUEST['misionID'];
@@ -24,6 +23,9 @@ class CompaniaController
         $Compania->mision=$_REQUEST['mision'];
 
         $this->model->GuardarCompania($Compania);
+
+         require_once 'view/compania/compania.php';
+        require_once 'view/footer.php';
        // $Compania->misionID > 0 ? $this->model->Actualizar($Compania) : $this->model->GuardarCompania($Compania);
         //header('Location: view/mision/mision.php');
     }

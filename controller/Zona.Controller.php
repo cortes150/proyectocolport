@@ -36,7 +36,7 @@ public function guardar(){
         //$this->model->Actualizar($zona); 
        //$zona->colportorID > 0 ? 
        $this->model->Actualizar($zona);
-       echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Zona&a=guardar')</script>";
+       echo "<script>window.location.assign('http://localhost/Colport/?c=Zona&a=guardar')</script>";
        
        //: $this->model->GuardarUsuario($zona);
 
@@ -73,7 +73,7 @@ public function guardar(){
         $name=$_POST['nombre'];
         $this->model->CrearZonaa($idc, $name);
         //require_once 'view/compania/compania.php';
-        echo "<script>window.location.assign('http://localhost:8080/COLPORTAJE/?c=Compania&a=Index')</script>";
+        echo "<script>window.location.assign('http://localhost/Colport/?c=Compania&a=Index')</script>";
         require_once 'view/footer.php';
     }
 
