@@ -10,15 +10,11 @@
   <option value="0">Seleccione Libros</option>
   	<?php foreach($this->model->litarLibros() as $r): ?>
 
-			<option value="<?php echo $r->libroID; ?>"><?php echo $r->titulo; ?>
+			<option value="<?php echo $r->libroID; ?>"><?php echo $r->titulo; ?> - <?php echo $r->precioVenta; ?> bs
 			</option>	
 
 	<?php endforeach; ?>
   </select>
-	</div>
-	<div class="col-md-6">
-		<label>Precio</label>
-		<input type="text" class="form-control">
 	</div>
 </div>
 	
@@ -31,7 +27,7 @@
 <label>Modalidad de Pago</label>
 <div class="radio">
 	 <br>
-	<label for=""><input type="radio" name="TipoDepago" value="contado">Contado</label>
+	<label for=""><input type="radio" name="TipoDepago" value="contado" checked>Contado</label>
 	<label for=""><input type="radio" name="TipoDepago" value="credito">Cuota</label>
 </div></div>
 

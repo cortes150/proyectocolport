@@ -197,7 +197,13 @@ public function TotalLibrosAsignados(){
 		return $sq->fetchAll(PDO::FETCH_OBJ);
     }
 
-    
+    public function Ganancia(){
+        $id=$_SESSION['usuarioID'];
+        
+        $sq=$this->pdo->prepare("SELECT SUM((vl.precio-l.precioOficial) * vl.cantidad) as ganancia from venta v, ventalibro vl,libro l where v.usuarioID='$id'and v.ventaID=vl.ventaID AND vl.libroID=l.libroID");
+        $sq->execute();
+        return $sq->fetch(PDO::FETCH_OBJ);
+    }
 }
 
  ?>

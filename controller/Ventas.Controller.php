@@ -61,9 +61,12 @@ public function CrearCli(){
         // echo "TipoDepagoCo".$TipoDepagoCo;
         // echo "TipoDepagoCr".$TipoDepagoCr;
         
-        require_once 'view/inicio-colportor.php';
-        require_once 'view/ventas/cliente.php';
-        require_once 'view/footer.php';
+        //require_once 'view/inicio-colportor.php';
+        //require_once 'view/colportor/Colportor.php';
+        
+        //require_once 'view/footer.php';
+                echo "<script>window.location.assign('http://localhost/Colport/?c=Colport&a=Inicio')</script>";
+
     }
 
 public function Integrantes(){
