@@ -4,18 +4,18 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Nombre Completo</th>
+				<th>Nombre Lider</th>
 				<th>Zona Asignada</th>
-				<th>Grupos</th>
-				<th colspan="2">Grupos</th>
+				<!--<th>Grupos</th>
+				<th colspan="2">Grupos</th>-->
 			</tr>
 		</thead>
 		<tbody>
 		
 		<?php foreach($this->model->listarAsignadosCampania() as $r): ?>
 			<tr>
+				<td><?php echo $r->primerNombre; ?></td>
 				<td><?php echo $r->nombre; ?></td>
-				<td><?php //echo $r->nameli; ?></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>

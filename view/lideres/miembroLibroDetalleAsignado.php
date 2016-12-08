@@ -24,12 +24,12 @@
 	<div class="col-md-2">
 		<label  class="form-control"><?php echo $deuda->precio; ?></label>
 	</div>
-	<div class="col-md-2">
+	<!--<div class="col-md-2">
 	<label>Libro Contado</label></div>
 	<div class="col-md-2">
 		<label  class="form-control"><?php echo $tcontado; ?></label>
 	</div>
-
+-->
 </div>
 
 	<?php $tla=$this->model->TotalLibrosAsignados(); ?>
@@ -56,7 +56,7 @@
 				if ($lcont!=NULL) 
 				{
 					echo "<td>".$lcont->cant."</td>";
-					$tcontado=+$lcont->cant;
+					$tcontado=$tcontado+$lcont->cant;
 				}
 				 else{
 				  echo "<td>0</ td>"; 

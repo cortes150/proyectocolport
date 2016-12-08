@@ -76,7 +76,7 @@ class Zona
 		{
 			$id=$_REQUEST['id'];
 
-			$stm = $this->pdo->prepare("SELECT nombre FROM zona WHERE companiaID='$id'");
+			$stm = $this->pdo->prepare("SELECT z.nombre,m.primerNombre FROM zona z,miembrozona mz,miembro m WHERE companiaID='$id' and z.zonaID=mz.zonaID AND mz.miembroID=m.miembroID");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);

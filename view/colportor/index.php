@@ -86,7 +86,7 @@
 	<label><font color="red">ganancia:</font></label></div>
 	<div class="col-md-1">
 
-		<label  class="form-control"><?php echo $ganancia->ganancia; ?></label>
+		<label  class="form-control" style="color: red;"><?php echo $ganancia->ganancia; ?></label>
 	</div>
 
 	<div class="col-md-2">
