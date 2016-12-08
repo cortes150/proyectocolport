@@ -132,8 +132,10 @@ class Ventas
 				$stme->execute();
 				$pagoID = $stme->fetch(PDO::FETCH_OBJ);
 			//pagocliente
-
-				
+ 
+            $pagocliente=$this->pdo->prepare("INSERT INTO pagocliente (pagoID,clienteID,fecha,Monto)
+		        VALUES ('$pagoID->pagoID','$clienteID',NOW(),$Monto)");
+			$pagocliente->execute();
 			
 
 			
